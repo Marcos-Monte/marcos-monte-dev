@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Rolagem suave de movimentação dentro da pagina */
+  font-family: Montserrat Alternates, sans-serif;
+}
+
+:root {
+  --primary-color: #252525;
+  --secondary-color: #dc2814;
+  --font-color: #fff;
+}
+
+.light {
+  --primary-color: ##ececec;
+  --secondary-color: #c96522;
+  --font-color: #03235e;
+}
