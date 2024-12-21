@@ -2,11 +2,11 @@
 
     <section class="containerMain">
 
+        <Home />
+
         <About />
 
         <Projects />
-
-        <Contacts />
 
     </section>
 
@@ -15,12 +15,12 @@
 <script>
 
     import About from '../sections/About.vue';
-import Contacts from '../sections/Contacts.vue';
+import Home from '../sections/Home.vue';
 import Projects from '../sections/Projects.vue';
 
     export default {
 
-        components: {About, Projects, Contacts}
+        components: {Home, Projects, About}
 
     }
 

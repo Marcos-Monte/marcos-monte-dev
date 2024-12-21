@@ -8,9 +8,9 @@
 
         <nav>
             <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contacts">Contatos</a></li>
             </ul>
         </nav>
 
@@ -37,7 +37,8 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border: solid black;
+        border-bottom: solid var(--secondary-color);
+        background-color: var(--primary-color);
         font-size: 1.5rem;
         position: fixed;
 

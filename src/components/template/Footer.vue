@@ -2,7 +2,7 @@
 
     <footer class="containerFooter">
 
-        <span>Copyright © 2023 by <a href="https://www.linkedin.com/in/montemarcos/" target="_blank">Marcos Monte</a>. All rights reserved.</span>
+        <span>Copyright © 2024 by <a href="https://www.linkedin.com/in/montemarcos/" target="_blank">Marcos Monte</a>. All rights reserved.</span>
 
     </footer>
 
