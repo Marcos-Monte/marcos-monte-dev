@@ -177,7 +177,7 @@
         }
     }
 
-    @media (min-width: 200px) and (max-width: 801px){
+    @media (min-width: 350px) and (max-width: 801px){
         #home {
             padding: 7rem 0 3rem 0 ;
             height: 100%;
@@ -200,7 +200,7 @@
             gap: 2rem;
 
             img {
-                width: 80px;
+                width: 60px;
             }
         }
     }
@@ -208,9 +208,15 @@
     @media (max-width: 350px){
         #home {
             padding: 6rem 0;
+            height: 100%;
         }
 
         .description {
+            width: 100%;
+            height: 100%;
+            flex-direction:column-reverse;
+            gap: 0;
+
             h1 {
                 font-size: 1.8rem;
             }
@@ -220,11 +226,24 @@
             }
 
         }
+
+        .article {
+            width: 100%;
+        }
+
         .containerIcons, .contacts {
             width: 100%;
 
             img {
                 width: 40px;
+            }
+        }
+
+        .photo {
+            min-width: 60%;
+
+            img {
+                width: 100%;
             }
         }
     }
