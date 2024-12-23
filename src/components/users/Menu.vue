@@ -1,9 +1,6 @@
 <template>
 
-    <header class=menu
-        @mouseover="openMenu"
-        @mouseout="closeMenu"
-    >
+    <header class=menu>
 
         <div class="containerMenu">
 
@@ -12,8 +9,7 @@
             </h3>
 
             <div 
-                
-                
+                @click="openMenu"
             >
 
                 <i class="bi bi-menu-button-fill"></i>
@@ -54,13 +50,8 @@
         methods: {
 
             openMenu(){
-                this.visible = true
-
+                this.visible = !this.visible
             },
-
-            closeMenu(){
-                this.visible = false
-            }
 
         }
 
@@ -106,6 +97,7 @@
             border-radius: .5rem;
             border: none;
         }
+
     }
 
     .listMenu {
