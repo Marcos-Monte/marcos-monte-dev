@@ -70,7 +70,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 5rem
+        gap: 5rem;
+
+        background-image: url('@/assets/background-dark.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .description {
@@ -109,7 +114,6 @@
 
         img {
             width: 17%;
-            
             min-width: 40px;
         }
     }

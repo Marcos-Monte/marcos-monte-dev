@@ -1,9 +1,12 @@
 <template>
 
-    <div v-show="windowWidth" class="quote-container">
-        <p v-if="quote" class="quote-text">"{{ quote.content }}" - {{ quote.author }}</p>
-        <p v-else class="quote-text">Carregando frase...</p>
-    </div>
+    <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
+    <template v-if="isWideScreen">
+        <div class="quote-container">
+            <p v-if="quote" class="quote-text">"{{ quote.content }}" - {{ quote.author }}</p>
+            <p v-else class="quote-text">Carregando frase...</p>
+        </div>
+    </template>
 
 </template>
 
@@ -12,15 +15,16 @@
 
         data() {
             return {
-                windowWidth: window.innerWidth,
+                windowWidth: window.innerWidth,// Armazena a largura inicial da tela
                 quote: null,
                 interval: null,
             };
         },
 
         computed: {
-            windowWidth() {
-                return window.innerWidth > 800
+            isWideScreen() {
+                // Computed property para verificar se a largura é maior que 700px
+                return this.windowWidth > 800
             }
         },
 
@@ -32,6 +36,9 @@
 
             // Muda a frase a cada 10 segundos (10000 ms)
             this.interval = setInterval(this.fetchQuote, 10000);
+            
+            // Escuta eventos de resize para atualizar a largura da janela
+            window.addEventListener('resize', this.updateWindowWidth);
 
         },
 
@@ -40,9 +47,17 @@
             if (this.interval) {
                 clearInterval(this.interval);
             }
+
+            // Remove o ouvinte de evento quando o componente for destruído
+            window.removeEventListener('resize', this.updateWindowWidth);
         },
 
         methods: {
+
+            // Atualiza a largura da janela
+            updateWindowWidth() {
+                this.windowWidth = window.innerWidth;
+            },
 
             async fetchQuote() {
 
