@@ -14,7 +14,7 @@
             
             <p>Minha jornada combina habilidades técnicas com uma base sólida de resolução de problemas adquirida ao longo de minha experiência profissional. Como servidor público na área da saúde, desenvolvi uma visão estratégica que aplico no desenvolvimento de soluções funcionais e impactantes.</p> 
             
-            <p>Estou sempre explorando novas ferramentas e tendências em tecnologia, buscando evoluir como desenvolvedor e criar aplicações que fazem a diferença. Vamos construir algo incrível juntos?</p>
+            <p>Estou sempre explorando novas ferramentas e tendências em tecnologia, buscando evoluir como desenvolvedor e criar aplicações que fazem a diferença. <strong> Vamos construir algo incrível juntos?</strong></p>
 
 
         </article>
@@ -32,7 +32,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #about {
         width: 100%;
         height: 99.5vh;
@@ -80,6 +80,10 @@
         p{
             line-height: 1.8rem;
             font-size: 1.2rem;
+
+            strong {
+                color: var(--secondary-color)
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="quote-container">
+    <div v-show="windowWidth" class="quote-container">
         <p v-if="quote" class="quote-text">"{{ quote.content }}" - {{ quote.author }}</p>
         <p v-else class="quote-text">Carregando frase...</p>
     </div>
@@ -12,9 +12,16 @@
 
         data() {
             return {
+                windowWidth: window.innerWidth,
                 quote: null,
                 interval: null,
             };
+        },
+
+        computed: {
+            windowWidth() {
+                return window.innerWidth > 800
+            }
         },
 
         created() {
@@ -35,8 +42,6 @@
             }
         },
 
-
-
         methods: {
 
             async fetchQuote() {
@@ -46,7 +51,7 @@
 
                     console.log('Status da Resposta:', response.status); // Verifique o código de status
 
-                    if (!response.ok) {
+                    if (!response.ok && this.windowWidth > 800)  {
                         throw new Error(`Erro ao buscar a frase: ${response.statusText}`);
                     }
 
@@ -76,4 +81,6 @@
     font-size: 1.2em;
     line-height: 1.5;
     }
+
+    
 </style>
