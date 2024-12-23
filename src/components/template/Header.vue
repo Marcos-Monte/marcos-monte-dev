@@ -1,35 +1,78 @@
 <template>
 
-    <header class="containerHeader">
+    <template v-if="isWideScreen">
 
-        <h3>
-            <strong>M</strong>arcos<strong>M</strong>onte
-        </h3>
+        <header class="containerHeader">
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-            </ul>
-        </nav>
+            <h3>
+                <strong>M</strong>arcos<strong>M</strong>onte
+            </h3>
 
-    </header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+    </template>
+
+    <template v-else>
+
+        <Menu />
+
+    </template>
+    
 
 
 </template>
 
 <script>
 
+    import Menu from '@/components/users/Menu.vue';
+
     export default {
 
+        components: {Menu},
+        
+        data(){
+            return {
+                windowWidth: window.innerWidth, // Armazena a largura inicial da tela
+            }
+        },
 
+        computed: {
+            // Computed property para verificar se a largura é maior que 700px
+            isWideScreen(){
+                return this.windowWidth > 700
+            }
+        },
+
+        mounted() {
+            // Escuta eventos de resize para atualizar a largura da janela
+            window.addEventListener('resize', this.updateWindowWidth);
+        },
+
+        beforeDestroy() {
+            // Remove o ouvinte de evento quando o componente for destruído
+            window.removeEventListener('resize', this.updateWindowWidth);
+        },
+
+        methods: {
+            // Atualiza a largura da janela
+            updateWindowWidth() {
+                this.windowWidth = window.innerWidth;
+            }
+        }
 
     }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .containerHeader {
         width: 100%;
@@ -74,5 +117,18 @@
         }
     }
 
+    /* Medias */
+    @media (min-width: 769px) and (max-width: 1000px){
+        .containerHeader {
+            nav {
+                width: 60%;
+                
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+
+    }
 
 </style>
