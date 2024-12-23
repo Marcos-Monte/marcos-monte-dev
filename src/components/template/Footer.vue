@@ -19,7 +19,7 @@
 
 </script>
 
-<style>
+<style lang="scss">
 
     .containerFooter {
         width: 100%;
@@ -29,7 +29,7 @@
         align-items: center;
         font-size: 1.5rem;
         background-color: var(--primary-color);
-        border: solid black;
+        border-top: solid var(--secondary-color);
 
         a {
             text-decoration: none;
@@ -41,5 +41,11 @@
         }
     }
 
+    @media (max-width: 768px){
+        .containerFooter {
+            font-size: 1rem;
+            text-align: center
+        }
+    }
 
 </style>

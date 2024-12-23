@@ -22,7 +22,7 @@
 
             <section class="listMenu" v-if="visible" >
 
-                <nav @mouseover="openMenu">
+                <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">Sobre</a></li>
