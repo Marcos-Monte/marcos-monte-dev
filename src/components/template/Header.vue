@@ -40,7 +40,7 @@
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
                 styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
-                visibility: false, // Mostrar ou esconder o 'menu' (resolução mobile) após o click
+                visibility: true, // Mostrar ou esconder o 'menu' (resolução mobile) após o click
             }
         },
 
@@ -193,9 +193,13 @@
 
     @media (max-width: 768px) {
         .containerHeader{
-            position: relative;
+            flex-wrap: wrap;
+            padding: 0 1.5rem;
             justify-content: space-between;
-            padding: 0 2rem;
+
+            h3 {
+                font-size: 1.5rem;
+            }
 
             nav {
                 min-width: 50%;
@@ -215,5 +219,15 @@
             }
         }
     }
+
+    @media (max-width: 350px){
+        .containerHeader {
+            justify-content: flex-end;
+            h3 {
+                display: none;
+                
+            }
+        }
+    } 
 
 </style>

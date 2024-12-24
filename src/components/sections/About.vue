@@ -119,7 +119,7 @@
     /* Medias */
     @media (min-width: 701px) and (max-width: 1200px){
         #about {
-            padding: 7rem 0 3rem 0 ;
+            padding: 5rem 0 3rem 0 ;
             height: 100%;
             flex-direction: column;
         }
@@ -131,7 +131,7 @@
 
     @media (max-width: 700px){
         #about {
-            padding: 7rem 0 3rem 0 ;
+            padding: 5rem 0 3rem 0 ;
             height: 100%;
             flex-direction: column;
         }
