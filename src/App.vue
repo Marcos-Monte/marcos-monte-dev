@@ -1,12 +1,13 @@
 <template>
 
-  <Page />
+  <Page :class="styleMode === false? 'dark': 'light'"/>
 
 </template>
 
 <script>
 
-  import Page from './components/template/Page.vue';
+  import eventBus from './barramento';
+import Page from './components/template/Page.vue';
 
   export default {
     
@@ -14,6 +15,22 @@
 
     components: {Page},
 
+    data(){
+      return {
+        styleMode: false,
+      }
+    },
+
+    created(){
+
+      eventBus.on('alterouEstilo', () => {
+
+        this.styleMode = !this.styleMode
+        
+      })
+
+
+    }
     
   }
 </script>

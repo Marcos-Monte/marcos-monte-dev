@@ -72,7 +72,7 @@
         align-items: center;
         gap: 5rem;
 
-        background-image: url('@/assets/background-dark.jpg');
+        background-image: var(--home-background);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

@@ -9,14 +9,17 @@
   font-family: "Montserrat Alternates";
 }
 
-:root {
+.dark {
   --primary-color: #252525;
   --secondary-color: #dc2814;
   --font-color: #fff;
+  --home-background: url('@/assets/background-dark.jpg');
+
 }
 
 .light {
-  --primary-color: ##ececec;
+  --primary-color: #ececec;
   --secondary-color: #c96522;
   --font-color: #03235e;
+  --home-background: url('@/assets/background-light.jpg');
 }

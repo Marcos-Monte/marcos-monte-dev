@@ -14,7 +14,7 @@
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
 
-                    <button class="styleButton" @click="style = !style" :class="style === false? 'lightMode': 'darkMode'">
+                    <button class="styleButton" @click="changeStyleMode()" :class="styleCircle === false? 'lightModeCircle': 'darkModeCircle'">
                         <span></span>
                     </button>
 
@@ -37,7 +37,9 @@
 
 <script>
 
-    import Menu from '@/components/users/Menu.vue';
+    /* Importando Objeto de Event Bus */
+    import eventBus from '@/barramento';
+import Menu from '@/components/users/Menu.vue';
 
     export default {
 
@@ -46,7 +48,7 @@
         data(){
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
-                style: false,
+                styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
             }
         },
 
@@ -72,6 +74,14 @@
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
             },
+
+            /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
+            changeStyleMode(){
+                eventBus.emit('alterouEstilo')
+
+                /* Altera o 'circulo' de dentro do botão que altera o estilo */
+                this.styleCircle = !this.styleCircle
+            }
         }
 
     }
@@ -142,11 +152,11 @@
         }
     }
 
-    .lightMode {
+    .lightModeCircle {
             justify-content: flex-start;
         }
 
-    .darkMode {
+    .darkModeCircle {
         justify-content: flex-end;
     }
 
