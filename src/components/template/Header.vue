@@ -13,6 +13,11 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
+
+                    <button class="styleButton" @click="style = !style" :class="style === false? 'lightMode': 'darkMode'">
+                        <span></span>
+                    </button>
+
                 </ul>
             </nav>
 
@@ -41,6 +46,7 @@
         data(){
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
+                style: false,
             }
         },
 
@@ -48,7 +54,7 @@
             // Computed property para verificar se a largura é maior que 700px
             isWideScreen(){
                 return this.windowWidth > 700
-            }
+            },
         },
 
         mounted() {
@@ -65,7 +71,7 @@
             // Atualiza a largura da janela
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
-            }
+            },
         }
 
     }
@@ -115,6 +121,33 @@
             }
 
         }
+    }
+
+    .styleButton {
+        width: 4rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: solid var(--secondary-color);
+        border-radius: 15px;
+        padding: 4px;
+        transition: ease;
+
+        span {
+            height: 100%;
+            width: 35%;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+    }
+
+    .lightMode {
+            justify-content: flex-start;
+        }
+
+    .darkMode {
+        justify-content: flex-end;
     }
 
     /* Medias */
