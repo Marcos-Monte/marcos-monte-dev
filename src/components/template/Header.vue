@@ -1,37 +1,31 @@
 <template>
 
-    <template v-if="isWideScreen">
+    <header class="containerHeader">
 
-        <header class="containerHeader">
+        <h3>
+            <strong>M</strong>arcos<strong>M</strong>onte
+        </h3>
 
-            <h3>
-                <strong>M</strong>arcos<strong>M</strong>onte
-            </h3>
+        <div class="menu" v-if="windowWidth <= 768" @click="handleMenu()">
 
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#projects">Projetos</a></li>
+            <i class="bi bi-menu-button-fill"></i>
 
-                    <button class="styleButton" @click="changeStyleMode()" :class="styleCircle === false? 'lightModeCircle': 'darkModeCircle'">
-                        <span></span>
-                    </button>
+        </div>  
 
-                </ul>
-            </nav>
+        <nav :class="visibility == false? 'hidden': 'visible'">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
 
-        </header>
+                <button class="styleButton" @click="changeStyleMode()" :class="styleCircle === false? 'lightModeCircle': 'darkModeCircle'">
+                    <span></span>
+                </button>
 
-    </template>
+            </ul>
+        </nav>
 
-    <template v-else>
-
-        <Menu />
-
-    </template>
-    
-
+    </header>
 
 </template>
 
@@ -39,16 +33,14 @@
 
     /* Importando Objeto de Event Bus */
     import eventBus from '@/barramento';
-import Menu from '@/components/users/Menu.vue';
 
     export default {
-
-        components: {Menu},
         
         data(){
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
                 styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
+                visibility: false, // Mostrar ou esconder o 'menu' (resolução mobile) após o click
             }
         },
 
@@ -57,6 +49,7 @@ import Menu from '@/components/users/Menu.vue';
             isWideScreen(){
                 return this.windowWidth > 700
             },
+
         },
 
         mounted() {
@@ -70,9 +63,13 @@ import Menu from '@/components/users/Menu.vue';
         },
 
         methods: {
-            // Atualiza a largura da janela
+            // Atualiza a largura da janela ()
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
+
+                // Se a largura da tela for MAIOR que 768 (mostrar navegação), senão. (não mostrar)
+                this.windowWidth > 768? this.visibility = true: this.visibility = false;
+
             },
 
             /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
@@ -81,6 +78,10 @@ import Menu from '@/components/users/Menu.vue';
 
                 /* Altera o 'circulo' de dentro do botão que altera o estilo */
                 this.styleCircle = !this.styleCircle
+            },
+
+            handleMenu(){
+                this.visibility = !this.visibility
             }
         }
 
@@ -160,8 +161,28 @@ import Menu from '@/components/users/Menu.vue';
         justify-content: flex-end;
     }
 
+    /* Menu */
+    .menu {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: var(--secondary-color);
+            border-radius: .5rem;
+            border: none;
+        }
+    .visible {
+        visibility: visible;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
     /* Medias */
-    @media (min-width: 769px) and (max-width: 1000px){
+    @media (min-width: 769px) and (max-width: 1200px){
         .containerHeader {
             nav {
                 width: 60%;
@@ -171,7 +192,28 @@ import Menu from '@/components/users/Menu.vue';
     }
 
     @media (max-width: 768px) {
+        .containerHeader{
+            position: relative;
+            justify-content: space-between;
+            padding: 0 2rem;
 
+            nav {
+                min-width: 50%;
+                height: 15rem;
+                position: absolute;
+                right: 0;
+                bottom: -15rem;
+                background-color: var(--secondary-color);
+                border-radius: 0px 0px 0px 10px ;
+
+                ul {
+                    height: 100%;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-evenly;
+                }
+            }
+        }
     }
 
 </style>
