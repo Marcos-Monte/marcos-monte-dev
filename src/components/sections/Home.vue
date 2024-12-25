@@ -2,8 +2,6 @@
 
     <section id="home">
 
-        <section class="description">
-
             <article class="article">
                 <h1>Marcos Monte</h1>
                 <span>Desenvolvedor_Web</span>
@@ -41,21 +39,13 @@
                 <img src="@/assets/cartoon-sem-fundo-dark.jpeg" alt="">
             </div>
 
-        </section>
-
-        <!-- <Quote class="visible"/> -->
-
     </section>
 
 </template>
 
 <script>
 
-    /* import Quote from '../users/Quote.vue'; */
-
     export default {
-
-        /* components: {Quote}, */
 
     }
 
@@ -67,7 +57,6 @@
         width: 100%;
         height: 99vh;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5rem;
@@ -76,14 +65,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-    }
-
-    .description {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5rem
     }
 
     .article {
@@ -172,30 +153,24 @@
 
     /* Medias */
     @media (min-width: 801px) and (max-width: 1200px){
-        .description {
-            width: 100%;
-        }
+
     }
 
     @media (min-width: 350px) and (max-width: 801px){
         #home {
             padding: 7rem 0 3rem 0 ;
             height: 100%;
-        }
-
-        .description {
             width: 100%;
-            height: 100%;
             flex-direction:column-reverse;
             gap: 0;
         }
 
         .article {
-            width: 100%;
+            width: 90%;
         }
 
         .containerIcons {
-            width: 80%;
+            width: 100%;
             justify-content: center;
             gap: 2rem;
 
@@ -209,13 +184,13 @@
         #home {
             padding: 6rem 0;
             height: 100%;
-        }
-
-        .description {
             width: 100%;
-            height: 100%;
             flex-direction:column-reverse;
             gap: 0;
+        }
+
+        .article {
+            width: 100%;
 
             h1 {
                 font-size: 1.8rem;
@@ -224,11 +199,6 @@
             span {
                 font-size: 1.2rem;
             }
-
-        }
-
-        .article {
-            width: 100%;
         }
 
         .containerIcons, .contacts {

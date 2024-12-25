@@ -40,19 +40,11 @@
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
                 styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
-                visibility: true, // Mostrar ou esconder o 'menu' (resolução mobile) após o click
+                visibility: window.innerWidth > 768, // Se a largura inicial for 'maior' que 768px, visibilidade = true
             }
         },
 
-        computed: {
-            // Computed property para verificar se a largura é maior que 700px
-            isWideScreen(){
-                return this.windowWidth > 700
-            },
-
-        },
-
-        mounted() {
+        created() {
             // Escuta eventos de resize para atualizar a largura da janela
             window.addEventListener('resize', this.updateWindowWidth);
         },
@@ -67,8 +59,12 @@
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
 
-                // Se a largura da tela for MAIOR que 768 (mostrar navegação), senão. (não mostrar)
-                this.windowWidth > 768? this.visibility = true: this.visibility = false;
+                // Atualiza a visibilidade com base no tamanho da janela
+                if (this.windowWidth > 768) {
+                    this.visibility = true; // Mostra o menu para resoluções maiores
+                } else {
+                    this.visibility = false // Esconde o menu para resoluções menores
+                }
 
             },
 
@@ -173,6 +169,7 @@
             border-radius: .5rem;
             border: none;
         }
+
     .visible {
         visibility: visible;
     }
@@ -212,10 +209,20 @@
 
                 ul {
                     height: 100%;
+                    padding: 0 1rem;
                     flex-direction: column;
                     align-items: flex-end;
                     justify-content: space-evenly;
                 }
+            }
+        }
+
+        .styleButton {
+            border: solid var(--font-color);
+            background-color: var(--secondary-color);
+
+            span {
+                background-color: var(--font-color);
             }
         }
     }
@@ -226,6 +233,15 @@
             h3 {
                 display: none;
                 
+            }
+        }
+
+        .styleButton {
+            border: solid var(--font-color);
+            background-color: var(--secondary-color);
+
+            span {
+                background-color: var(--font-color);
             }
         }
     } 

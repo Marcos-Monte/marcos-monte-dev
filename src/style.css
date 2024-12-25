@@ -14,7 +14,7 @@
   --secondary-color: #dc2814;
   --font-color: #fff;
   --home-background: url('@/assets/background-dark.jpg');
-
+  --cartoon-image: "@/assets/cartoon-sem-fundo-dark.jpeg"
 }
 
 .light {
@@ -22,4 +22,5 @@
   --secondary-color: #c96522;
   --font-color: #03235e;
   --home-background: url('@/assets/background-light.jpg');
+  --cartoon-image: "@/assets/cartoon-sem-fundo-light.jpeg"
 }
