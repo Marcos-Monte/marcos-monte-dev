@@ -43,7 +43,7 @@
 
         </section>
 
-        <Quote class="visible"/>
+        <!-- <Quote class="visible"/> -->
 
     </section>
 
@@ -51,11 +51,11 @@
 
 <script>
 
-    import Quote from '../users/Quote.vue';
+    /* import Quote from '../users/Quote.vue'; */
 
     export default {
 
-        components: {Quote},
+        /* components: {Quote}, */
 
     }
 
