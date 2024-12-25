@@ -139,13 +139,14 @@
         border: solid var(--secondary-color);
         border-radius: 15px;
         padding: 4px;
-        transition: ease;
+        transition: justify-content 0.5s ease; /* Adiciona transição na posição do conteúdo */
 
         span {
             height: 100%;
             width: 35%;
             background-color: var(--secondary-color);
             border-radius: 50%;
+            transition: transform 0.5s ease; /* Suaviza o movimento do círculo */
         }
     }
 
@@ -213,7 +214,13 @@
                     flex-direction: column;
                     align-items: flex-end;
                     justify-content: space-evenly;
+
+                    a:hover {
+                        color: var(--primary-color);
+                    }
                 }
+
+
             }
         }
 
@@ -230,9 +237,17 @@
     @media (max-width: 350px){
         .containerHeader {
             justify-content: flex-end;
+
             h3 {
                 display: none;
-                
+            }
+
+            nav {
+                ul {
+                    a:hover {
+                        color: var(--primary-color);
+                    }
+                }
             }
         }
 
