@@ -82,7 +82,9 @@
 
             /* Método, ao ser ativado alterna a 'visibilidade' do menu para o valor 'oposto' (true / false) */
             handleMenu(){
-                this.visibility = !this.visibility
+                if(this.windowWidth < 769){
+                    this.visibility = !this.visibility
+                }
             },
 
         }
@@ -145,8 +147,8 @@
         border: solid var(--secondary-color);
         border-radius: 15px;
         padding: 4px;
-        transition: justify-content 0.5s ease; /* Adiciona transição na posição do conteúdo */
-
+        transition: transform 0.5s ease-in-out;
+        
         span {
             height: 100%;
             width: 35%;

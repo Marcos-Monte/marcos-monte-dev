@@ -6,7 +6,7 @@
 
         <About />
 
-        <!-- <Projects /> -->
+        <Projects />
 
     </section>
 
@@ -16,12 +16,11 @@
 
     import About from '../sections/About.vue';
 import Home from '../sections/Home.vue';
-/* import Projects from '../sections/Projects.vue'; */
+import Projects from '../sections/Projects.vue';
 
     export default {
 
-        /* components: {Home, Projects, About}, */
-        components: {Home, About}
+        components: {Home, Projects, About},
 
     }
 
