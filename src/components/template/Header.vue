@@ -6,18 +6,22 @@
             <strong>M</strong>arcos<strong>M</strong>onte
         </h3>
 
+        <!-- Menu 'hamburguer' com diretivas que fazem ele ficar visivel apenas em resoluções abaixo de 768px -->
         <div class="menu" v-if="windowWidth <= 768" @click="handleMenu()">
 
+            <!-- Icone de uso do Bootstrap -->
             <i class="bi bi-menu-button-fill"></i>
 
         </div>  
 
+        <!-- Navegação, classe dinamica de visibilidade atrelada a variavel 'visibility' -->
         <nav :class="visibility == false? 'hidden': 'visible'">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#home" @click="handleMenu()">Home</a></li>
+                <li><a href="#about" @click="handleMenu()">Sobre</a></li>
+                <li><a href="#projects" @click="handleMenu()">Projetos</a></li>
 
+                <!-- Botão, ao clicar ativa o método que alterna os estilos (dark / light mode) -->
                 <button class="styleButton" @click="changeStyleMode()" :class="styleCircle === false? 'lightModeCircle': 'darkModeCircle'">
                     <span></span>
                 </button>
@@ -76,9 +80,11 @@
                 this.styleCircle = !this.styleCircle
             },
 
+            /* Método, ao ser ativado alterna a 'visibilidade' do menu para o valor 'oposto' (true / false) */
             handleMenu(){
                 this.visibility = !this.visibility
-            }
+            },
+
         }
 
     }

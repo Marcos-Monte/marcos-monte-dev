@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth; /* Rolagem suave de movimentação dentro da pagina */
+  transition: transform 0.5s;
   font-family: "Montserrat Alternates";
 }
 
