@@ -5,10 +5,15 @@
         <h2>Projetos</h2>
 
         <section class="containerCards">
-            <Card 
-                v-for="projeto in projetos"
-                :propsProjeto = projeto
-            />
+
+            <template v-if="projetos.length > 0">
+                <Card 
+                    v-for="projeto in projetos"
+                    :propsProjeto = projeto
+                />
+            </template>
+
+            <p v-else>Houve um erro no carregamento dos projetos =(</p>
             
         </section>
 
@@ -35,22 +40,46 @@ import Card from '../users/Card.vue';
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+
     #projects {
         width: 100%;
         height: 99vh;
+        padding: 5rem 0;
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
-        border: solid black;
+        gap: 3rem;
+
+        background-image: var(--home-background);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p{
+            font-size: 1.8rem;
+        }
     }
 
     .containerCards {
         width: 80%;
-        /* height: 100%; */
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem
+    }
+
+    /* Medias */
+    @media (max-width: 1200px){
+        #projects {
+            height: 100%;
+        }
     }
 
 </style>
