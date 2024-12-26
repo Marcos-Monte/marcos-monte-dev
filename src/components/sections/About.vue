@@ -4,7 +4,7 @@
         <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
         <template v-if="isWideScreen">
             <div class="photo">
-                <img src="@/assets/foto.jpeg" alt="">
+                <img src="@/assets/foto.jpeg" alt="Foto de Marcos Monte">
             </div>
 
         </template>

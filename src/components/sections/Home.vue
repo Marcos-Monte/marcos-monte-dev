@@ -36,7 +36,7 @@
             </article>
 
             <div class="photo">
-                <img src="@/assets/cartoon-sem-fundo-dark.jpeg" alt="">
+                <img :src="imagePath" alt="Design em animação de um programador com traços indigenas e bigode">
             </div>
 
     </section>
@@ -45,7 +45,47 @@
 
 <script>
 
+    /* Importando Objeto de Event Bus */
+    import eventBus from '@/barramento';
+
+    /* Importando Imagens */
+    import darkImage from '@/assets/cartoon-sem-fundo-dark.jpeg';
+import lightImage from '@/assets/cartoon-sem-fundo-light.jpeg';
+
     export default {
+
+        data(){
+
+            return {
+                /* Variavel que será alternada de acordo com o estilo da aplicação */
+                appStyle: false, 
+
+            }
+
+        },
+
+        /* Variaveis que são monitoradas de forma Síncrona */
+        computed: {
+            
+            imagePath(){
+
+                /* De acordo com o 'estilo' da aplicação terá uma imagem específica */
+                return this.appStyle?lightImage:darkImage
+                
+            }
+
+        },  
+
+        /* Ciclo de vida da aplicação */
+        created(){
+
+            /* Assim que a aplicação é iniciada, fica monitorando o evento personalizado */
+            eventBus.on('alterouEstilo', () => {
+                /* Sempre que o evento ocorrer, alternar o valor da variável */
+                this.appStyle = !this.appStyle
+            })
+
+        }
 
     }
 

@@ -6,8 +6,10 @@
 
 <script>
 
+  /* Importando Objeto de Event Bus */
   import eventBus from './barramento';
-import Page from './components/template/Page.vue';
+  /* Importando Componente Filho */
+  import Page from './components/template/Page.vue';
 
   export default {
     
