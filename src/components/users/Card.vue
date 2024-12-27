@@ -1,6 +1,6 @@
 <template>
 
-        <article class="cardContainer" v-show="propsCurrentIndex === propsIndex">
+        <article class="cardContainer">
 
             <img :src="propsProjeto.imagem" alt="">
 

@@ -8,22 +8,14 @@
 
             <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
 
-            <!-- :style="{ transform: `translateX(-${currentIndex * 100}%)` }" -->
-            <div 
-                class="carrosselContainer"
-                
-                >
+            <div class="carrosselContainer">
 
                 <Card 
-                    class="carrosselItem"
-                    v-for="(projeto, index) in projetos"
+                    v-for="(projeto, index) in visibleProjects"
                     :key="index"
                     :propsProjeto="projeto"
-
-                    :propsCurrentIndex="currentIndex" 
-                    :propsIndex="index"
                 />
-                
+
             </div>
 
             <button class="botaoCarrossel next" @click="nextSlide">❯</button>
@@ -48,34 +40,59 @@ import Card from "../users/Card.vue";
             return {
                 projetos: data.projetos,
                 currentIndex: 0, // Índice do grupo atual
-                itemsPerPage: 3, // Número de projetos visíveis por vez
+                itemsPerPage: 0, // Número de projetos visíveis por vez
+                windowWidth: window.innerWidth, // Armazena a largura inicial da tela
             };
 
+        },
+
+        created() {
+            // Escuta eventos de resize para atualizar a largura da janela
+            window.addEventListener('resize', this.visibleProjects);
+        },
+
+        beforeDestroy() {
+            // Remove o ouvinte de evento quando o componente for destruído
+            window.removeEventListener('resize', this.visibleProjects);
         },
 
         computed: {
 
             totalSlides() {
                 // Calcula o número total de "páginas" de projetos
-                /* return Math.ceil(this.projetos.length / this.itemsPerPage); */
-                return this.projetos.length
+                return Math.ceil(this.projetos.length / this.itemsPerPage);
+                /* return this.projetos.length */
             },
+
+            visibleProjects(){
+                // Retorna apenas os projetos que devem ser visíveis na página atual, (grupo de 3)
+                this.windowWidth = window.innerWidth;
+
+                const quantidade = this.windowWidth < 900? this.itemsPerPage = 1: this.itemsPerPage = 3;
+
+                const start = this.currentIndex * quantidade;
+
+                return this.projetos.slice(start, start + quantidade)
+            }
 
         },
 
         methods: {
 
             nextSlide() {
-                // Avança para o próximo grupo, com looping circular
+                // Avança para a próxima página
                 this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-                console.log(this.currentIndex)
+                
             },
 
             prevSlide() {
-                // Retrocede para o grupo anterior, com looping circular
+                // Retrocede para a página anterior
                 this.currentIndex =(this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
             },
+
         },
+
+        
     };
 
 </script>
@@ -113,15 +130,19 @@ import Card from "../users/Card.vue";
     }
 
     .carrosselContainer{
-        width: 80%;
+        width: 100%;
         height: 600px;
         position: relative;
         overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .carrosselItem{
-        width: calc(100% / 3);
-        height: 100%;
+        /* Exibe 3 itens por vez */
+        /* width: calc(100% / 3); */
+        /* height: 100%; */
     }
 
     .botaoCarrossel{
