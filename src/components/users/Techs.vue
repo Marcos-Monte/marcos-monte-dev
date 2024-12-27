@@ -28,14 +28,14 @@
 <style lang="scss" scoped>
 
     .containerIcons {
-        width: 100%;
+        width: 80%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
 
         img {
-            width: 17%;
+            width: 15%;
             min-width: 40px;
         }
     }

@@ -5,7 +5,8 @@
             <article class="article">
 
                 <h1>Marcos Monte</h1>
-                <span>Desenvolvedor_Web</span>
+                <!-- <span>Desenvolvedor_Web</span> -->
+                <Subtitle />
 
                 <Techs />
 
@@ -35,11 +36,12 @@ import lightImage from '@/assets/cartoon-sem-fundo-light.jpeg';
 /* Import: Componentes */
 import Contacts from '../users/Contacts.vue';
 import Photo from '../users/Photo.vue';
+import Subtitle from '../users/Subtitle.vue';
 import Techs from '../users/Techs.vue';
 
     export default {
         /* Registrando Componentes */
-        components: {Techs, Contacts, Photo},
+        components: {Techs, Contacts, Photo, Subtitle},
 
         data(){
 
@@ -97,7 +99,7 @@ import Techs from '../users/Techs.vue';
     }
 
     .article {
-        width: 40%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -106,12 +108,6 @@ import Techs from '../users/Techs.vue';
 
         h1 {
             font-size: 2.5rem
-        }
-
-        span {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            font-weight: 700;
         }
     }
 
@@ -126,7 +122,7 @@ import Techs from '../users/Techs.vue';
         }
 
         .article {
-            width: 90%;
+            width: 100%;
         }
 
     }
@@ -147,9 +143,8 @@ import Techs from '../users/Techs.vue';
                 font-size: 1.8rem;
             }
 
-            span {
-                font-size: 1.2rem;
-            }
+
         }
+
     }
 </style>
