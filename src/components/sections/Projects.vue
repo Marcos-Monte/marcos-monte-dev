@@ -4,6 +4,7 @@
 
         <h2>Projetos</h2>
 
+        <!-- Será renderizado: Se a lista de projetos não estiver vazia -->
         <template  v-if="projetos.length > 0">
 
             <section class="carrossel">
@@ -26,6 +27,7 @@
 
         </template>
 
+        <!-- Será renderizado: Se a lista de projetos estiver vazia -->
         <p v-else>Houve um erro no carregamento dos projetos =(</p>
 
     </section>
@@ -67,17 +69,22 @@ import Card from "../users/Card.vue";
             totalSlides() {
                 // Calcula o número total de "páginas" de projetos
                 return Math.ceil(this.projetos.length / this.itemsPerPage);
-                /* return this.projetos.length */
+                
             },
 
             visibleProjects(){
-                // Retorna apenas os projetos que devem ser visíveis na página atual, (grupo de 3)
+                /* Recebe a 'largura da tela' atual, sempre que o método for iniciado */
                 this.windowWidth = window.innerWidth;
 
+                /* Armazena a Lógica: 
+                    Se a resolução for menos que 900, mostrar apenas 1 Item
+                    Se a resolução for maior que 900, mostrar 3 Itens */
                 const quantidade = this.windowWidth < 900? this.itemsPerPage = 1: this.itemsPerPage = 3;
 
+                /* Armazena  o Calculo abaixo*/
                 const start = this.currentIndex * quantidade;
 
+                /* Retorna a quantidade de itens indicada */
                 return this.projetos.slice(start, start + quantidade)
             }
 
@@ -129,6 +136,7 @@ import Card from "../users/Card.vue";
         }
     }
 
+    /* Container Maior */
     .carrossel {
         width: 100%;
         display: flex;
@@ -136,6 +144,7 @@ import Card from "../users/Card.vue";
         position: relative;
     }
 
+    /* Container que armazena os Items / Projetos */
     .carrosselContainer{
         width: 100%;
         height: 600px;

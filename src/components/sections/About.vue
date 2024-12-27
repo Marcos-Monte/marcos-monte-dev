@@ -4,8 +4,9 @@
         <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
         <template v-if="isWideScreen">
 
+            <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
             <Photo 
-                :propsImage="imagePath"
+                :propsImage="image"
                 :propsAlt="'Foto do Desenvolvedor'" 
             />
 
@@ -36,12 +37,13 @@ import Foto from '@/assets/foto.jpeg';
 import Photo from '@/components/users/Photo.vue';
 
     export default {
-
+        /* Registrando componente Filho */
         components: {Photo},
 
         data(){
             return {
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
+                image: Foto, // Variavel recebe o caminho da 'imagem', que será adicionada ao componente Photo via Props
             }
         },
 
@@ -50,20 +52,17 @@ import Photo from '@/components/users/Photo.vue';
             isWideScreen(){
                 return this.windowWidth > 700
             },
-
-            imagePath(){
-                return Foto;
-            }
         },
 
         mounted() {
             // Escuta eventos de resize para atualizar a largura da janela
-            window.addEventListener('reSize', this.updateWindowWidth);
+            window.addEventListener('resize', this.updateWindowWidth);
+
         },
 
         beforeDestroy() {
             // Remove o ouvinte de evento quando o componente for destruído
-            window.removeEventListener('reSize', this.updateWindowWidth);
+            window.removeEventListener('resize', this.updateWindowWidth);
         },
 
         methods: {
@@ -87,21 +86,6 @@ import Photo from '@/components/users/Photo.vue';
         gap: 5rem;
         
     }
-
-    /* .photo {
-            width: 25%;
-            border-radius: 50%;
-            min-width: 250px;
-            
-            img {
-                width: 100%;
-                border-radius: 50%;
-            }
-    } */
-
-   /*  .photo:hover{
-        box-shadow: 0 12px 100px var(--secondary-color);
-    } */
 
     .description {
         width: 35%;

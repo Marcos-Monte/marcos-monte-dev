@@ -13,6 +13,7 @@
 
             </article>
 
+            <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
             <Photo 
                 :propsImage="imagePath"
                 :propsAlt="'Design em animação de um programador com traços indigenas e bigode'" 
@@ -56,7 +57,9 @@ import Techs from '../users/Techs.vue';
             imagePath(){
 
                 /* De acordo com o 'estilo' da aplicação terá uma imagem específica */
-                return this.appStyle?lightImage:darkImage
+                return this.appStyle
+                    ?lightImage
+                    :darkImage
                 
             }
 

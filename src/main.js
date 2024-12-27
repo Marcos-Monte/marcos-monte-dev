@@ -5,6 +5,5 @@ import { createApp } from 'vue';
 /* Import: Componente Principal da Aplicação */
 import App from './App.vue';
 
-
 /* Criando e Montando a Instancia Vue */
 createApp(App).mount('#app')
