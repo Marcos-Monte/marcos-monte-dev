@@ -4,26 +4,32 @@
 
         <h2>Projetos</h2>
 
-        <section class="carrossel">
+        <template  v-if="projetos.length > 0">
 
-            <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
+            <section class="carrossel">
 
-            <div class="carrosselContainer">
+                <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
 
-                <Card 
-                    v-for="(projeto, index) in visibleProjects"
-                    :key="index"
-                    :propsProjeto="projeto"
-                />
+                <div class="carrosselContainer">
 
-            </div>
+                    <Card 
+                        v-for="(projeto, index) in visibleProjects"
+                        :key="index"
+                        :propsProjeto="projeto"
+                    />
 
-            <button class="botaoCarrossel next" @click="nextSlide">❯</button>
+                </div>
 
-            <p v-if="projetos.length === 0">Houve um erro no carregamento dos projetos =(</p>
+                <button class="botaoCarrossel next" @click="nextSlide">❯</button>
 
-        </section>
+            </section>
+
+        </template>
+
+        <p v-else>Houve um erro no carregamento dos projetos =(</p>
+
     </section>
+    
 </template>
 
 <script>
@@ -101,7 +107,6 @@ import Card from "../users/Card.vue";
     #projects {
         width: 100%;
         height: 100%;
-        /* height: 99vh; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -115,11 +120,12 @@ import Card from "../users/Card.vue";
         background-position: center;
 
         h2 {
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         p {
             font-size: 1.8rem;
+            text-align: center;
         }
     }
 
@@ -138,12 +144,6 @@ import Card from "../users/Card.vue";
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-    }
-
-    .carrosselItem{
-        /* Exibe 3 itens por vez */
-        /* width: calc(100% / 3); */
-        /* height: 100%; */
     }
 
     .botaoCarrossel{
@@ -172,6 +172,10 @@ import Card from "../users/Card.vue";
     @media (max-width: 900px){
         #projects {
             height: 100%;
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     }
 
