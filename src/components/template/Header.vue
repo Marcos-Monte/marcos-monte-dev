@@ -105,6 +105,7 @@
         background-color: var(--primary-color);
         font-size: 1.5rem;
         position: fixed;
+        z-index: 10; /* Garante que o header esteja acima de outros elementos */
 
         h3 {
             font-size: 2rem;

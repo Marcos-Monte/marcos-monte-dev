@@ -1,6 +1,6 @@
 <template>
 
-        <article class="cardContainer">
+        <article class="cardContainer" v-show="propsCurrentIndex === propsIndex">
 
             <img :src="propsProjeto.imagem" alt="">
 
@@ -35,6 +35,14 @@
         props: {
             propsProjeto: {
                 type: Object,
+            }, 
+
+            propsIndex: {
+                type: Number
+            },
+
+            propsCurrentIndex: {
+                type: Number
             }
         }
 
@@ -46,7 +54,7 @@
 <style lang="scss" scoped>
 
     .cardContainer{
-        width: 300px;
+        max-width: 300px;
         height: 600px;
         position: relative;
         border-radius: 10px;
