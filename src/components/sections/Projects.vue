@@ -100,7 +100,8 @@ import Card from "../users/Card.vue";
 <style lang="scss" scoped>
     #projects {
         width: 100%;
-        height: 99vh;
+        height: 100%;
+        /* height: 99vh; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -164,6 +165,14 @@ import Card from "../users/Card.vue";
 
     .prev {
         left: 0;
+    }
+
+
+    /* Medias */
+    @media (max-width: 900px){
+        #projects {
+            height: 100%;
+        }
     }
 
 </style>
