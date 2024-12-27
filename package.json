@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "mitt": "^3.0.1",
+    "t-writer.js": "^1.0.4",
     "vue": "^3.2.13"
   },
   "devDependencies": {
