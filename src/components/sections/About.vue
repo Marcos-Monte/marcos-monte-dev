@@ -3,9 +3,11 @@
     <section id="about">
         <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
         <template v-if="isWideScreen">
-            <div class="photo">
-                <img src="@/assets/foto.jpeg" alt="Foto de Marcos Monte">
-            </div>
+
+            <Photo 
+                :propsImage="imagePath"
+                :propsAlt="'Foto do Desenvolvedor'" 
+            />
 
         </template>
 
@@ -21,13 +23,21 @@
 
 
         </article>
+
     </section>
 
 </template>
 
 <script>
+/* Import de Imagems */
+import Foto from '@/assets/foto.jpeg';
+
+/* Import de Componentes */
+import Photo from '@/components/users/Photo.vue';
 
     export default {
+
+        components: {Photo},
 
         data(){
             return {
@@ -39,17 +49,21 @@
             // Computed property para verificar se a largura é maior que 700px
             isWideScreen(){
                 return this.windowWidth > 700
+            },
+
+            imagePath(){
+                return Foto;
             }
         },
 
         mounted() {
             // Escuta eventos de resize para atualizar a largura da janela
-            window.addEventListener('resize', this.updateWindowWidth);
+            window.addEventListener('reSize', this.updateWindowWidth);
         },
 
         beforeDestroy() {
             // Remove o ouvinte de evento quando o componente for destruído
-            window.removeEventListener('resize', this.updateWindowWidth);
+            window.removeEventListener('reSize', this.updateWindowWidth);
         },
 
         methods: {
@@ -74,7 +88,7 @@
         
     }
 
-    .photo {
+    /* .photo {
             width: 25%;
             border-radius: 50%;
             min-width: 250px;
@@ -83,11 +97,11 @@
                 width: 100%;
                 border-radius: 50%;
             }
-    }
+    } */
 
-    .photo:hover{
+   /*  .photo:hover{
         box-shadow: 0 12px 100px var(--secondary-color);
-    }
+    } */
 
     .description {
         width: 35%;

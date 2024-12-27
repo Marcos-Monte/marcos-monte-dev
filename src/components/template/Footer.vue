@@ -13,13 +13,11 @@
 
     export default {
 
-
-
     }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .containerFooter {
         width: 100%;

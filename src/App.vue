@@ -7,7 +7,7 @@
 <script>
 
   /* Importando Objeto de Event Bus */
-  import eventBus from './barramento';
+  import eventBus from './eventBus';
   /* Importando Componente Filho */
   import Page from './components/template/Page.vue';
 

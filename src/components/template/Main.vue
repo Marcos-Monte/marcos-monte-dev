@@ -14,12 +14,13 @@
 
 <script>
 
-    import About from '../sections/About.vue';
+/* Imports: Componentes referentes ao conteudo da aplicação */
+import About from '../sections/About.vue';
 import Home from '../sections/Home.vue';
 import Projects from '../sections/Projects.vue';
 
     export default {
-
+        /* Registrando Componentes */
         components: {Home, Projects, About},
 
     }

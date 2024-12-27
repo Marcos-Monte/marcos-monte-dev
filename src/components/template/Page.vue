@@ -13,12 +13,13 @@
 
 <script>
 
-    import Footer from './Footer.vue';
+/* Imports:  Componentes que vão compor a Pagina */
+import Footer from './Footer.vue';
 import Header from './Header.vue';
 import Main from './Main.vue';
 
     export default {
-
+        /* Registrando Componentes */
         components: {Header, Main, Footer}
 
     }

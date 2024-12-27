@@ -34,9 +34,7 @@
 </template>
 
 <script>
-
-    /* Importando Objeto de Event Bus */
-    import eventBus from '@/barramento';
+import EventBus from '@/eventBus';
 
     export default {
         
@@ -74,7 +72,7 @@
 
             /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
             changeStyleMode(){
-                eventBus.emit('alterouEstilo')
+                EventBus.emit('alterouEstilo')
 
                 /* Altera o 'circulo' de dentro do botão que altera o estilo */
                 this.styleCircle = !this.styleCircle
