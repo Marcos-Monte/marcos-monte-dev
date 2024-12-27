@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="links">
-                    <a :href="propsProjeto.linkGithub"><i class="bi bi-github"></i></a>
-                    <a :href="propsProjeto.linkApp"><i class="bi bi-display"></i></a>
+                    <a :href="propsProjeto.linkGithub" target="_blank"><i class="bi bi-github"></i></a>
+                    <a :href="propsProjeto.linkApp" target="_blank"><i class="bi bi-display"></i></a>
                 </div>
 
             </article>
@@ -57,7 +57,7 @@
         max-width: 300px;
         height: 600px;
         position: relative;
-        border-radius: 10px;
+        border-radius: 40px;
         overflow: hidden;
 
         img {

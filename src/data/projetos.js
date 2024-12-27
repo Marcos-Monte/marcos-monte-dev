@@ -1,9 +1,9 @@
 import CadastroGestantes from '@/data/img/cadastro-gestante.png';
-import JornadaPython from '@/data/img/jornada-python.webp';
-import MatadorDeMonstros from '@/data/img/matador-de-monstros.jpeg';
-import Restaurant from '@/data/img/restaurant.webp';
-import ThiagoAndradeImagem from '@/data/img/thiagoandrade.webp';
-import ToDoList from '@/data/img/todolist.jpeg';
+import JornadaPython from '@/data/img/jornada-python.png';
+import MatadorDeMonstros from '@/data/img/matador-de-monstros.png';
+import Restaurant from '@/data/img/restaurant.png';
+import ThiagoAndradeImagem from '@/data/img/thiagoandrade.png';
+import ToDoList from '@/data/img/todolist.png';
 
 export default {
     projetos: [
