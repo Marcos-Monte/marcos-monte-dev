@@ -4,6 +4,7 @@
 
         <h2>Projetos</h2>
 
+        <span>Selecione o projeto que deseja saber mais.</span>
         <!-- Será renderizado: Se a lista de projetos não estiver vazia -->
         <template  v-if="projetos.length > 0">
 
@@ -119,7 +120,7 @@ import Card from "../users/Card.vue";
         align-items: center;
         justify-content: center;
         padding: 5rem 0;
-        gap: 3rem;
+        gap: 2rem;
 
         background-image: var(--home-background);
         background-repeat: no-repeat;
@@ -130,7 +131,7 @@ import Card from "../users/Card.vue";
             font-size: 2rem;
         }
 
-        p {
+        p, span {
             font-size: 1.8rem;
             text-align: center;
         }
@@ -184,6 +185,10 @@ import Card from "../users/Card.vue";
 
             h2 {
                 font-size: 1.5rem;
+            }
+
+            span {
+                font-size: 1.2rem;
             }
         }
     }

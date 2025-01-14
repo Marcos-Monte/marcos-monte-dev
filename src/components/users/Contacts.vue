@@ -2,7 +2,7 @@
 
     <section class="container">
 
-        <span>Contatos</span>
+        <span>Redes e Contatos</span>
 
         <div class="contacts">
 
@@ -28,7 +28,7 @@
         gap: 2rem;
 
         span {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--secondary-color);
             font-weight: 700;
         }
@@ -73,13 +73,15 @@
 
     /* Medias */
 
-    @media (max-width: 350px){
-
+    @media (max-width: 380px){
         .container {
             span {
                 font-size: 1.2rem;
             }
         }
+    }
+
+    @media (max-width: 350px){
 
         .contacts {
             width: 100%;

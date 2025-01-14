@@ -70,8 +70,8 @@ import { onMounted, ref } from 'vue';
 
 <style scoped>
 
-    .subtitle {
-        font-size: 1.5rem;
+    .subtitle>span {
+        font-size: 1.6rem;
         color: var(--secondary-color);
         font-weight: 700;
     }
@@ -80,8 +80,8 @@ import { onMounted, ref } from 'vue';
         color: var(--secondary-color);
     }
 
-    @media (max-width: 350px){
-        .subtitle {
+    @media (max-width: 380px){
+        .subtitle>span {
             font-size: 1.2rem;
         }
     }

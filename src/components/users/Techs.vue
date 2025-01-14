@@ -35,7 +35,7 @@
         flex-wrap: wrap;
 
         img {
-            width: 15%;
+            max-width: 12%;
             min-width: 40px;
         }
     }
