@@ -13,11 +13,22 @@
 
                 <p>{{ propsProjeto.descricao }}</p>
                 
+                <h3>Tecnologias Utilizadas</h3>
+
                 <div class="techs">
+
+                    <img v-for="(tech, index) in technologies"
+                        :key="index"
+                        :src="tech"
+                        alt="Tecnologia utilizada na aplicação"
+                    />
 
                 </div>
 
+                <h3>Links</h3>
+
                 <div class="links">
+                    
                     <a :href="propsProjeto.linkGithub" target="_blank"><i class="bi bi-github"></i></a>
                     <a :href="propsProjeto.linkApp" target="_blank"><i class="bi bi-display"></i></a>
                 </div>
@@ -43,8 +54,15 @@
 
             propsCurrentIndex: {
                 type: Number
-            }
-        }
+            },
+
+        },
+
+        computed: {
+            technologies() {
+                return this.propsProjeto.techs
+            },
+        },
 
 
     }
@@ -87,14 +105,14 @@
         text-align: center;
         border-radius: 10px;
 
-        .links {
+        .links, .techs {
             width: 100%;
             display: flex;
             justify-content: space-around;
             align-items: center;
 
             i {
-                font-size: 3rem;
+                font-size: 2rem;
                 text-decoration: none;
                 color: var(--font-color)
             }
@@ -109,7 +127,12 @@
             transform: translateY(0); //Tras o container (descrição) para a área visivel do card
         }
 
-    
+    .techs {
+        img {
+            width: 50px;
+            
+        }
+    }
 
 
 </style>
