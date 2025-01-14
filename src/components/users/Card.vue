@@ -13,7 +13,7 @@
 
                 <p>{{ propsProjeto.descricao }}</p>
                 
-                <h3>Tecnologias Utilizadas</h3>
+                <h3>Principais Tecnologias</h3>
 
                 <div class="techs">
 
