@@ -2,7 +2,7 @@
 
     <section id="projects">
 
-        <h2>Projetos</h2>
+        <h2>Principais Projetos</h2>
 
         <span>Selecione o projeto que deseja saber mais.</span>
         <!-- Será renderizado: Se a lista de projetos não estiver vazia -->
