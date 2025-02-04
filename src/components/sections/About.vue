@@ -31,10 +31,10 @@
 
 <script>
 /* Import de Imagems */
-import Foto from '@/assets/foto.jpeg';
+import Foto from '../../assets/foto.jpeg';
 
 /* Import de Componentes */
-import Photo from '@/components/users/Photo.vue';
+import Photo from '../users/Photo.vue';
 
     export default {
         /* Registrando componente Filho */

@@ -37,7 +37,7 @@
 
 <script>
 /* Import de Componentes e Dados */
-import data from "@/data/projetos.js";
+import data from "../../data/projetos.js";
 import Card from "../users/Card.vue";
 
     export default {

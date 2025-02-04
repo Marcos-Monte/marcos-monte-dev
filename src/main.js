@@ -1,5 +1,5 @@
 /* Import: Estilizações Globais */
-import '@/style.css';
+import './style.css';
 /* Import: Módulo de Criação de Instancia Vue */
 import { createApp } from 'vue';
 /* Import: Componente Principal da Aplicação */

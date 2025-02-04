@@ -27,11 +27,11 @@
 <script>
 
 /* Import: do Objeto EventBus */
-import EventBus from '@/eventBus';
+import EventBus from '../../eventBus.js';
 
 /* Importando Imagens */
-import darkImage from '@/assets/cartoon-sem-fundo-dark.jpeg';
-import lightImage from '@/assets/cartoon-sem-fundo-light.jpeg';
+import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
+import lightImage from '../../assets/cartoon-sem-fundo-light.jpeg';
 
 /* Import: Componentes */
 import Contacts from '../users/Contacts.vue';

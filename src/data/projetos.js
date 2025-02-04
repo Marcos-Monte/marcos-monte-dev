@@ -1,20 +1,20 @@
 /* Import de Imagens */
-import CadastroGestantes from '@/data/img/cadastro-gestante.png';
-import JornadaPython from '@/data/img/jornada-python.png';
-import MatadorDeMonstros from '@/data/img/matador-de-monstros.png';
-import Restaurant from '@/data/img/restaurant.png';
-import ThiagoAndradeImagem from '@/data/img/thiagoandrade.png';
-import ToDoList from '@/data/img/todolist.png';
+import CadastroGestantes from './img/cadastro-gestante.png';
+import JornadaPython from './img/jornada-python.png';
+import MatadorDeMonstros from './img/matador-de-monstros.png';
+import Restaurant from './img/restaurant.png';
+import ThiagoAndradeImagem from './img/thiagoandrade.png';
+import ToDoList from './img/todolist.png';
 
 /* Import de Tecnologias */
-import Axios from '@/data/img/iconAxios.png';
-import Css from '@/data/img/iconCss.png';
-import Html from '@/data/img/iconHtml.png';
-import JavaScript from '@/data/img/iconJs.png';
-import Next from '@/data/img/iconNext.png';
-import React from '@/data/img/iconReact.png';
-import SheetDb from '@/data/img/iconSheetsDb.png';
-import Vue from '@/data/img/iconVue.png';
+import Axios from './img/iconAxios.png';
+import Css from './img/iconCss.png';
+import Html from './img/iconHtml.png';
+import JavaScript from './img/iconJs.png';
+import Next from './img/iconNext.png';
+import React from './img/iconReact.png';
+import SheetDb from './img/iconSheetsDb.png';
+import Vue from './img/iconVue.png';
 
 export default {
     projetos: [

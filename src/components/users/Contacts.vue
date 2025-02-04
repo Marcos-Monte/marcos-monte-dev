@@ -10,7 +10,7 @@
             <a href="https://github.com/Marcos-Monte" target="_blank"><i class="bi bi-github"></i></a>
             <a href="mailto:marcos.monte.junior@gmail.com" target="_blank"><i class="bi bi-envelope"></i></a>
             <a href="https://wa.me/5513996398240?text=" target="_blank"><i class="bi bi-whatsapp"></i></a>
-            <a href="/Curriculo-Marcos Monte.pdf" target="_blank"><i class="bi bi-file-person-fill"></i></a>
+            <a href="/CV 2025.pdf" target="_blank"><i class="bi bi-file-person-fill"></i></a>
 
         </div>
     </section>
