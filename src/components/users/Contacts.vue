@@ -20,9 +20,9 @@
 <style lang="scss" scoped>
 
     .container {
-        width: 100%;
+        width: 70%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
         gap: 2rem;

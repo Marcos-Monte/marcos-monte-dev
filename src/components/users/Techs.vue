@@ -28,9 +28,9 @@
 <style lang="scss" scoped>
 
     .containerIcons {
-        width: 80%;
+        width: 60%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
 
