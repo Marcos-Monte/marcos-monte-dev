@@ -51,6 +51,7 @@
     @media (max-width: 350px){
         .photo {
             min-width: 60%;
+            animation: none; // Retira a animação 
 
             img {
                 width: 100%;

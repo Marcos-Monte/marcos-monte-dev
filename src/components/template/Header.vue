@@ -153,7 +153,9 @@ import EventBus from '../../eventBus.js';
             width: 35%;
             background-color: var(--secondary-color);
             border-radius: 50%;
-            transition: transform 0.5s ease; /* Suaviza o movimento do círculo */
+            /* Suaviza o movimento do círculo */
+            // transition: transform 0.5s ease; 
+            transform: smooth;
         }
     }
 

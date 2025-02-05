@@ -114,7 +114,7 @@ import Card from "../users/Card.vue";
 <style lang="scss" scoped>
     #projects {
         width: 100%;
-        height: 100%;
+        height: 99.5vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -143,6 +143,9 @@ import Card from "../users/Card.vue";
         display: flex;
         justify-content: center;
         position: relative;
+
+        // Animação
+        animation: fadeInUp 1s;
     }
 
     /* Container que armazena os Items / Projetos */

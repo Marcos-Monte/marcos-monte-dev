@@ -6,6 +6,7 @@
 
             <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
             <Photo 
+                class="animate__animated animate__slideInLeft"
                 :propsImage="image"
                 :propsAlt="'Foto do Desenvolvedor'" 
             />
@@ -95,6 +96,9 @@ import Photo from '../users/Photo.vue';
         justify-content: space-around;
         align-items: center;
         gap: 2rem;
+
+        /* Aplicando a animação diretamente no CSS */
+        animation: slideInRight 1s ; 
 
         h2 {
             font-size: 2rem;

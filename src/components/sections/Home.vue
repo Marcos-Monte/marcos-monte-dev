@@ -86,7 +86,7 @@ import Techs from '../users/Techs.vue';
 
     #home {
         width: 100%;
-        height: 99vh;
+        height: 99.5vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,6 +96,7 @@ import Techs from '../users/Techs.vue';
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
     }
 
     .article {
@@ -115,7 +116,7 @@ import Techs from '../users/Techs.vue';
     @media (min-width: 350px) and (max-width: 801px){
         #home {
             padding: 7rem 0 3rem 0 ;
-            height: 100%;
+            height: 100vh;
             width: 100%;
             flex-direction:column-reverse;
             gap: 0;
@@ -123,6 +124,7 @@ import Techs from '../users/Techs.vue';
 
         .article {
             width: 100%;
+            
         }
 
     }

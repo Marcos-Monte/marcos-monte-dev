@@ -41,7 +41,8 @@
 
   #app {
     width: 100%;
-    
+    /* Evita criar barras de rolagem */
+    overflow: hidden; 
   }
 
 </style>
