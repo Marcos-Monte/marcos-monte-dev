@@ -8,7 +8,8 @@
         <!-- Será renderizado: Se a lista de projetos não estiver vazia -->
         <template  v-if="projetos.length > 0">
 
-            <section class="carrossel">
+            <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
+            <section class="carrossel wow animate__animated animate__fadeInUp">
 
                 <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
 
@@ -143,9 +144,6 @@ import Card from "../users/Card.vue";
         display: flex;
         justify-content: center;
         position: relative;
-
-        // Animação
-        animation: fadeInUp 1s;
     }
 
     /* Container que armazena os Items / Projetos */

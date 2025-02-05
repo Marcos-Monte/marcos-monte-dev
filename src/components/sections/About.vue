@@ -5,15 +5,17 @@
         <template v-if="isWideScreen">
 
             <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
+            <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
             <Photo 
-                class="animate__animated animate__slideInLeft"
+                class="wow animate__animated animate__slideInLeft"
                 :propsImage="image"
                 :propsAlt="'Foto do Desenvolvedor'" 
             />
 
         </template>
 
-        <article class="description">
+        <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
+        <article class="description wow animate__animated animate__slideInRight">
 
             <h2><strong>S</strong>obre <strong>M</strong>im</h2>
 
@@ -96,9 +98,6 @@ import Photo from '../users/Photo.vue';
         justify-content: space-around;
         align-items: center;
         gap: 2rem;
-
-        /* Aplicando a animação diretamente no CSS */
-        animation: slideInRight 1s ; 
 
         h2 {
             font-size: 2rem;

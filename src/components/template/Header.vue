@@ -22,8 +22,8 @@
                 <li><a href="#projects" @click="handleMenu()">Projetos</a></li>
 
                 <!-- Botão, ao clicar ativa o método que alterna os estilos (dark / light mode) -->
-                <button class="styleButton" @click="changeStyleMode()" :class="styleCircle === false? 'lightModeCircle': 'darkModeCircle'">
-                    <span></span>
+                <button class="styleButton" @click="changeStyleMode()">
+                    <span :class="{ darkModeCircle: styleCircle }"></span>
                 </button>
 
             </ul>
@@ -147,6 +147,7 @@ import EventBus from '../../eventBus.js';
         border-radius: 15px;
         padding: 4px;
         transition: transform 0.5s ease-in-out;
+        transform: translateX(0); /* Posição inicial (modo claro) */
         
         span {
             height: 100%;
@@ -154,17 +155,13 @@ import EventBus from '../../eventBus.js';
             background-color: var(--secondary-color);
             border-radius: 50%;
             /* Suaviza o movimento do círculo */
-            // transition: transform 0.5s ease; 
-            transform: smooth;
+            transition: transform 0.5s ease; 
+            
         }
     }
 
-    .lightModeCircle {
-            justify-content: flex-start;
-        }
-
     .darkModeCircle {
-        justify-content: flex-end;
+        transform: translateX(170%); /* Move suavemente para o lado direito */
     }
 
     /* Menu */
