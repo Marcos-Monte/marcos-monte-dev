@@ -21,7 +21,7 @@ import Vue from './img/icons/iconVue.png';
 
 export default {
     projetos: [
-        {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: 'https://github.com/Marcos-Monte/thiago-andrade', linkApp: 'https://thiagoandradests.com.br/', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
+        {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: '', linkApp: 'https://thiagoandradests.com.br/', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
 
         {titulo: 'Gerador de Visitas', subtitulo: 'Solicitação de Visita Domiciliar SUS', imagem: GeradorVisita, linkGithub: 'https://github.com/Marcos-Monte/vd-valongo', linkApp: 'https://vd-valongo.vercel.app/', descricao: 'Aplicação desenvolvida para Unidade de Saúde da Família do Valongo, Santos-SP. Visa gerar um arquivo, para impressão, que antes era feito manualmente. Pretensão de estender para usabilidade em todas as unidades.', techs: [JavaScript, Vue, Vite, Node]},
 

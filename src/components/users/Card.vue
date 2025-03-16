@@ -29,7 +29,7 @@
 
                 <div class="links">
                     
-                    <a :href="propsProjeto.linkGithub" target="_blank"><i class="bi bi-github"></i></a>
+                    <a v-if="propsProjeto.linkGithub" :href="propsProjeto.linkGithub" target="_blank"><i class="bi bi-github"></i></a>
                     <a :href="propsProjeto.linkApp" target="_blank"><i class="bi bi-display"></i></a>
                 </div>
 
