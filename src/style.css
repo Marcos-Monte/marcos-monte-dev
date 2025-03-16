@@ -14,7 +14,7 @@
   --primary-color: #252525;
   --secondary-color: #dc2814;
   --font-color: #fff;
-  --home-background: url('src/assets/background-dark.jpg');
+  --home-background: url('../src/assets/background-dark.jpg');
   --cartoon-image: "@/assets/cartoon-sem-fundo-dark.jpeg"
 }
 
@@ -22,6 +22,6 @@
   --primary-color: #ececec;
   --secondary-color: #c96522;
   --font-color: #03235e;
-  --home-background: url('src/assets/background-light.jpg');
+  --home-background: url('../src/assets/background-light.jpg');
   --cartoon-image: "@/assets/cartoon-sem-fundo-light.jpeg"
 }
