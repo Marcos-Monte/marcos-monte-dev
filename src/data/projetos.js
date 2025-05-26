@@ -6,6 +6,7 @@ import MatadorDeMonstros from './img/figures/matador-de-monstros.png';
 import Restaurant from './img/figures/restaurant.png';
 import ThiagoAndradeImagem from './img/figures/thiagoandrade.png';
 import ToDoList from './img/figures/todolist.png';
+import Sispar from './img/figures/sispar.png';
 
 /* Import de Tecnologias */
 import Axios from './img/icons/iconAxios.png';
@@ -18,10 +19,14 @@ import React from './img/icons/iconReact.png';
 import SheetDb from './img/icons/iconSheetsDb.png';
 import Vite from './img/icons/IconVite.png';
 import Vue from './img/icons/iconVue.png';
+import Python from './img/icons/iconPython.png';
+import MySql from './img/icons/iconMySql.png';
 
 export default {
     projetos: [
         {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: '', linkApp: 'https://thiagoandradests.com.br/', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
+
+        {titulo: 'Sistema de Reembolso', subtitulo: 'SISPAR', imagem: Sispar, linkGithub: '', linkApp: 'https://sispar-iota.vercel.app/', descricao: 'O SISPAR é uma aplicação web desenvolvida no curso Fullstack "Be Digital" da Vai na Web, oferecido pela Wilson Sons. O objetivo desse projeto é construir um sistema FullStack de gerenciamento de reembolsos.', techs: [React, Python, MySql, Axios]},
 
         {titulo: 'Gerador de Visitas', subtitulo: 'Solicitação de Visita Domiciliar SUS', imagem: GeradorVisita, linkGithub: 'https://github.com/Marcos-Monte/vd-valongo', linkApp: 'https://vd-valongo.vercel.app/', descricao: 'Aplicação desenvolvida para Unidade de Saúde da Família do Valongo, Santos-SP. Visa gerar um arquivo, para impressão, que antes era feito manualmente. Pretensão de estender para usabilidade em todas as unidades.', techs: [JavaScript, Vue, Vite, Node]},
 
