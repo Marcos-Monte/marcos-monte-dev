@@ -1,29 +1,35 @@
 /* Import de Imagens */
 import CadastroGestantes from './img/figures/cadastro-gestante.png';
+import FrazattoImagem from './img/figures/frazatto.png';
 import GeradorVisita from './img/figures/geradorVisita.png';
 import JornadaPython from './img/figures/jornada-python.png';
 import MatadorDeMonstros from './img/figures/matador-de-monstros.png';
 import Restaurant from './img/figures/restaurant.png';
+import Sispar from './img/figures/sispar.png';
 import ThiagoAndradeImagem from './img/figures/thiagoandrade.png';
 import ToDoList from './img/figures/todolist.png';
-import Sispar from './img/figures/sispar.png';
 
 /* Import de Tecnologias */
 import Axios from './img/icons/iconAxios.png';
+import BootstrapVue from './img/icons/iconBootstrapVue.png';
 import Css from './img/icons/iconCss.png';
+import Git from './img/icons/iconGit.png';
 import Html from './img/icons/iconHtml.png';
 import JavaScript from './img/icons/iconJs.png';
+import MySql from './img/icons/iconMySql.png';
 import Next from './img/icons/iconNext.png';
 import Node from './img/icons/IconNode.webp';
+import Python from './img/icons/iconPython.png';
 import React from './img/icons/iconReact.png';
+import Sass from './img/icons/iconSass.png';
 import SheetDb from './img/icons/iconSheetsDb.png';
 import Vite from './img/icons/IconVite.png';
 import Vue from './img/icons/iconVue.png';
-import Python from './img/icons/iconPython.png';
-import MySql from './img/icons/iconMySql.png';
 
 export default {
     projetos: [
+        {titulo: 'Landing Page', subtitulo: 'Frazatto Logística', imagem: FrazattoImagem, linkGithub: '', linkApp: 'https://frazattologistica.com.br/', descricao: 'Landing Page de empresa com foco no ramo Logístico', techs: [JavaScript, Vue, BootstrapVue, Sass, Git]},
+
         {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: '', linkApp: 'https://thiagoandradests.com.br/', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
 
         {titulo: 'Sistema de Reembolso', subtitulo: 'SISPAR', imagem: Sispar, linkGithub: '', linkGithub: 'https://github.com/Marcos-Monte/sispar', linkGithub: 'https://github.com/Marcos-Monte/sispar-backend', linkApp: 'https://sispar-iota.vercel.app/', descricao: 'O SISPAR é uma aplicação web desenvolvida no curso Fullstack "Be Digital" da Vai na Web, oferecido pela Wilson Sons. O objetivo desse projeto é construir um sistema FullStack de gerenciamento de reembolsos.', techs: [React, Python, MySql, Axios]},
