@@ -70,7 +70,7 @@ export default {
 <style lang="scss" scoped>
 .aboutSection {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
