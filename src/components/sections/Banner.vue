@@ -1,18 +1,39 @@
 <template>
     <section id="home" class="bannerSection">
-        <img :src="banner" alt="Banner Image" loading="lazy"/>
+        <img :src="imagePath" alt="Banner Image" loading="lazy"/>
     </section>
 
 </template>
 
 <script>
-import Banner from '../../assets/banner.png';
+import LightBanner from '../../assets/banner-light.png';
+import DarkBanner from '../../assets/banner.png';
+import EventBus from '../../eventBus';
 
     export default {
         data(){
             return {
-                banner: Banner,
+                banner: DarkBanner,
+                appStyle: false,
             }
+        },
+
+        computed: {
+            imagePath() {
+                return this.appStyle
+                    ? LightBanner
+                    : DarkBanner
+            }
+        },
+
+        mounted() {
+            EventBus.on('alterouEstilo', () => {
+                this.appStyle = !this.appStyle
+            })
+        },
+
+        beforeDestroy() {
+            EventBus.off('alterouEstilo');
         },
     }
 
@@ -22,7 +43,6 @@ import Banner from '../../assets/banner.png';
     .bannerSection {
         padding-top: 80px !important;
         width: 100%;
-        // height: 100vh;
 
         img {
             width: 100%;
