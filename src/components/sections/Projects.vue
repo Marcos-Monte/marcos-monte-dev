@@ -1,6 +1,6 @@
 <template>
 
-    <section id="projects">
+    <section id="projects" class="projectsSection">
 
         <h2>Principais Projetos</h2>
 
@@ -113,9 +113,9 @@ import Card from "../users/Card.vue";
 </script>
 
 <style lang="scss" scoped>
-    #projects {
+    .projectsSection {
         width: 100%;
-        height: 99.5vh;
+        padding: 5rem 0 ;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -181,7 +181,7 @@ import Card from "../users/Card.vue";
 
     /* Medias */
     @media (max-width: 900px){
-        #projects {
+        .projectsSection {
             height: 100%;
 
             h2 {

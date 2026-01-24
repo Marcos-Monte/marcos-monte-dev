@@ -20,11 +20,14 @@ import Banner from '../../assets/banner.png';
 
 <style scoped lang="scss">
     .bannerSection {
+        padding-top: 80px !important;
         width: 100%;
+        // height: 100vh;
 
         img {
             width: 100%;
             height: 100%;
+            object-fit: contain;
         }
     }
 </style>

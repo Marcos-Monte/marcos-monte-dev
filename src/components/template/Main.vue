@@ -4,17 +4,17 @@
         <Banner />
         <!-- <Home /> -->
         <About />
+        <!-- <LoopTechnologies /> -->
         <Projects />
     </section>
 
 </template>
 
 <script>
-
-/* Imports: Componentes referentes ao conteudo da aplicação */
 import About from '../sections/About.vue';
 import Banner from '../sections/Banner.vue';
 import Home from '../sections/Home.vue';
+// import LoopTechnologies from '../sections/LoopTechnologies.vue';
 import Projects from '../sections/Projects.vue';
 
     export default {
@@ -24,6 +24,7 @@ import Projects from '../sections/Projects.vue';
             Projects, 
             About, 
             Banner,
+            // LoopTechnologies
         },
     }
 
