@@ -2,7 +2,7 @@
 
     <section class="containerMain">
         <Banner />
-        <Home />
+        <!-- <Home /> -->
         <About />
         <Projects />
     </section>

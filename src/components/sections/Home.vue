@@ -86,11 +86,12 @@ import Techs from '../users/Techs.vue';
 
     #home {
         width: 100%;
-        height: 99.5vh;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 5rem;
+        padding: 8rem 0 5rem 0 ;
 
         background-image: var(--home-background);
         background-repeat: no-repeat;

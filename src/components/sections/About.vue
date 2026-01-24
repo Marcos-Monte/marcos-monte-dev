@@ -1,20 +1,11 @@
 <template>
-
-    <section id="about">
-        <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
-        <template v-if="isWideScreen">
-
-            <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
-            <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
-            <Photo 
+    <section id="about" class="aboutSection">
+            <Photo
                 class="wow animate__animated animate__slideInLeft"
-                :propsImage="image"
-                :propsAlt="'Foto do Desenvolvedor'" 
+                :propsImage="imagePath"
+                :propsAlt="'Design em animação de um programador com traços indigenas e bigode'" 
             />
 
-        </template>
-
-        <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
         <article class="description wow animate__animated animate__slideInRight">
 
             <h2><strong>S</strong>obre <strong>M</strong>im</h2>
@@ -27,62 +18,52 @@
 
 
         </article>
-
     </section>
-
 </template>
 
 <script>
-/* Import de Imagems */
-import Foto from '../../assets/foto.jpeg';
-
-/* Import de Componentes */
+import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
+import lightImage from '../../assets/cartoon-sem-fundo-light.jpeg';
+import EventBus from '../../eventBus';
 import Photo from '../users/Photo.vue';
 
     export default {
-        /* Registrando componente Filho */
-        components: {Photo},
+        components: { 
+            Photo,
+        },
 
         data(){
             return {
-                windowWidth: window.innerWidth, // Armazena a largura inicial da tela
-                image: Foto, // Variavel recebe o caminho da 'imagem', que será adicionada ao componente Photo via Props
+                appStyle: false,
             }
         },
 
         computed: {
-            // Computed property para verificar se a largura é maior que 700px
-            isWideScreen(){
-                return this.windowWidth > 700
-            },
+            imagePath(){
+                return this.appStyle
+                    ? lightImage
+                    : darkImage
+            }
         },
 
         mounted() {
-            // Escuta eventos de resize para atualizar a largura da janela
-            window.addEventListener('resize', this.updateWindowWidth);
-
+            EventBus.on('alterouEstilo', () => {
+                this.appStyle = !this.appStyle
+            })
         },
 
         beforeDestroy() {
-            // Remove o ouvinte de evento quando o componente for destruído
-            window.removeEventListener('resize', this.updateWindowWidth);
+            EventBus.off('alterouEstilo');
         },
-
-        methods: {
-            // Atualiza a largura da janela
-            updateWindowWidth() {
-                this.windowWidth = window.innerWidth;
-            }
-        }
-
     }
 
 </script>
 
 <style lang="scss" scoped>
-    #about {
+    .aboutSection {
         width: 100%;
-        height: 99.5vh;
+        height: max-content !important;
+        padding: 5rem 0 ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -119,10 +100,11 @@ import Photo from '../users/Photo.vue';
 
     /* Medias */
     @media (min-width: 701px) and (max-width: 1200px){
-        #about {
-            padding: 5rem 0 3rem 0 ;
-            height: 100%;
+        .aboutSection {
+            // padding: 5rem 0 3rem 0 ;
+            // height: 100%;
             flex-direction: column;
+            gap: 2rem;
         }
 
         .description {
@@ -131,19 +113,18 @@ import Photo from '../users/Photo.vue';
     }
 
     @media (max-width: 700px){
-        #about {
-            padding: 5rem 0 3rem 0 ;
+        .aboutSection {
+            padding: 3rem 0 ;
             height: 100%;
             flex-direction: column;
+            gap: 1rem;
         }
 
         .description {
             width: 95%;
-
             h2 {
                 font-size: 1.5rem;
             }
-
             p {
                 font-size: 1rem;
             }

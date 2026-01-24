@@ -1,5 +1,5 @@
 <template>
-    <section id="bannerSection">
+    <section id="home" class="bannerSection">
         <img :src="banner" alt="Banner Image" loading="lazy"/>
     </section>
 
@@ -7,8 +7,8 @@
 
 <script>
 import Banner from '../../assets/banner.png';
-    export default {
 
+    export default {
         data(){
             return {
                 banner: Banner,
@@ -19,7 +19,7 @@ import Banner from '../../assets/banner.png';
 </script>
 
 <style scoped lang="scss">
-    #bannerSection {
+    .bannerSection {
         width: 100%;
 
         img {
