@@ -8,17 +8,7 @@
 
                 <h2><strong>S</strong>obre <strong>M</strong>im</h2>
 
-                <p>Olá, sou Marcos Monte, desenvolvedor Web em transição de carreira e estudante de Análise e
-                    Desenvolvimento de Sistemas. Apaixonado por tecnologia, atualmente estou no 4º semestre do curso e
-                    desenvolvo projetos utilizando tecnologias como Vue.js, React e Node.js.</p>
-
-                <p>Minha jornada combina habilidades técnicas com uma base sólida de resolução de problemas adquirida ao
-                    longo de minha experiência profissional. Como servidor público na área da saúde, desenvolvi uma
-                    visão estratégica que aplico no desenvolvimento de soluções funcionais e impactantes.</p>
-
-                <p>Estou sempre explorando novas ferramentas e tendências em tecnologia, buscando evoluir como
-                    desenvolvedor e criar aplicações que fazem a diferença. <strong> Vamos construir algo incrível
-                        juntos?</strong></p>
+                <p>Olá, sou Marcos Monte, desenvolvedor Web Júnior formado em Análise e Desenvolvimento de Sistemas em junho de 2025. Apaixonado por tecnologia, estou sempre explorando novas ferramentas para criar soluções inovadoras e impactantes.</p> <p>Desde fevereiro de 2025, atuo como desenvolvedor Web, utilizando minha stack composta por JavaScript, Vue.js, Bootstrap, Vuetify, Vue-Router, VUEX, GIT, VS Code, Bitbucket, Jira, Axios e integração com APIs RESTful.</p> <p>Participo de uma squad com cinco membros fixos, onde colaboro em projetos de alto impacto. Essa experiência tem aprimorado minhas habilidades técnicas e interpessoais em ambientes dinâmicos e colaborativos.</p> <p>No momento, estou ampliando meu conhecimento com Kotlin, visando criar aplicações mobile usando Kotlin Multiplataforma para Android e iOS. Apesar de estar no início dos estudos, estou animado para construir minha primeira aplicação.</p> <p>Com visão estratégica desenvolvida através da saúde pública e uma base sólida em resolução de problemas, busco evoluir continuamente e criar aplicações que fazem a diferença. <strong>Vamos juntos nessa jornada?</strong></p>
 
             </article>
         </div>
@@ -91,7 +81,7 @@ export default {
 }
 
 /* Medias */
-@media (min-width: 701px) and (max-width: 1200px) {
+@media (min-width: 901px) and (max-width: 1350px) {
     .aboutSection {
         flex-direction: column;
         gap: 2rem;
@@ -102,7 +92,7 @@ export default {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .aboutSection {
         padding: 3rem 0;
         height: 100%;
@@ -112,9 +102,11 @@ export default {
 
     .description {
         width: 95%;
+
         h2 {
             font-size: 1.5rem;
         }
+
         p {
             font-size: 1rem;
         }
