@@ -20,7 +20,6 @@
                     desenvolvedor e criar aplicações que fazem a diferença. <strong> Vamos construir algo incrível
                         juntos?</strong></p>
 
-
             </article>
         </div>
         <LoopTechnologies />
@@ -28,9 +27,9 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
 import lightImage from '../../assets/cartoon-sem-fundo-light.jpeg';
-import EventBus from '../../eventBus';
 import Photo from '../users/Photo.vue';
 import LoopTechnologies from './LoopTechnologies.vue';
 
@@ -40,28 +39,14 @@ export default {
         LoopTechnologies,
     },
 
-    data() {
-        return {
-            appStyle: false,
-        }
-    },
-
     computed: {
+        ...mapGetters('globals', ['appStyle']),
+
         imagePath() {
             return this.appStyle
                 ? lightImage
                 : darkImage
         }
-    },
-
-    mounted() {
-        EventBus.on('alterouEstilo', () => {
-            this.appStyle = !this.appStyle
-        })
-    },
-
-    beforeDestroy() {
-        EventBus.off('alterouEstilo');
     },
 }
 

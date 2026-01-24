@@ -25,9 +25,7 @@
 </template>
 
 <script>
-
-/* Import: do Objeto EventBus */
-import EventBus from '../../eventBus.js';
+import { mapGetters } from 'vuex';
 
 /* Importando Imagens */
 import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
@@ -43,41 +41,20 @@ import Techs from '../users/Techs.vue';
         /* Registrando Componentes */
         components: {Techs, Contacts, Photo, Subtitle},
 
-        data(){
-
-            return {
-                /* Variavel que será alternada de acordo com o estilo da aplicação */
-                appStyle: false, 
-
-            }
-
-        },
-
         /* Variaveis que são monitoradas de forma Síncrona */
         computed: {
-            
+            ...mapGetters('globals', ['appStyle']),
+
             imagePath(){
 
                 /* De acordo com o 'estilo' da aplicação terá uma imagem específica */
                 return this.appStyle
-                    ?lightImage
-                    :darkImage
+                    ? lightImage
+                    : darkImage
                 
             }
 
-        },  
-
-        /* Ciclo de vida da aplicação */
-        created(){
-
-            /* Assim que a aplicação é iniciada, fica monitorando o evento personalizado */
-            EventBus.on('alterouEstilo', () => {
-                /* Sempre que o evento ocorrer, alternar o valor da variável */
-                this.appStyle = !this.appStyle
-            })
-
-        }
-
+        }, 
     }
 
 </script>

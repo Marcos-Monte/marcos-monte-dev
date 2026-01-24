@@ -6,34 +6,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import LightBanner from '../../assets/banner-light.png';
 import DarkBanner from '../../assets/banner.png';
-import EventBus from '../../eventBus';
 
     export default {
         data(){
             return {
                 banner: DarkBanner,
-                appStyle: false,
             }
         },
 
         computed: {
+            ...mapGetters('globals', ['appStyle']),
+
             imagePath() {
                 return this.appStyle
                     ? LightBanner
                     : DarkBanner
             }
-        },
-
-        mounted() {
-            EventBus.on('alterouEstilo', () => {
-                this.appStyle = !this.appStyle
-            })
-        },
-
-        beforeDestroy() {
-            EventBus.off('alterouEstilo');
         },
     }
 

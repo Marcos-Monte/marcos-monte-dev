@@ -8,9 +8,13 @@ import WOW from 'wow.js';
 import { createApp } from 'vue';
 /* Import: Componente Principal da Aplicação */
 import App from './App.vue';
+// Import: Vuex Store
+import store from './store';
 
 /* Criando a Instancia Vue */
 const app = createApp(App)
+// Registrando o Vuex Store na Instancia Vue
+app.use(store);
 
 // Iniciando WOW.js para ativar animações ao rolar a pagina
 new WOW({

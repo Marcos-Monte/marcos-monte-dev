@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import EventBus from '../../eventBus.js';
+import { mapActions } from 'vuex/dist/vuex.cjs.js';
 
     export default {
         
@@ -57,6 +57,8 @@ import EventBus from '../../eventBus.js';
         },
 
         methods: {
+            ...mapActions('globals', ['toggleAppStyle']),
+
             // Atualiza a largura da janela ()
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
@@ -72,7 +74,8 @@ import EventBus from '../../eventBus.js';
 
             /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
             changeStyleMode(){
-                EventBus.emit('alterouEstilo')
+                // EventBus.emit('alterouEstilo')
+                this.toggleAppStyle()
 
                 /* Altera o 'circulo' de dentro do botão que altera o estilo */
                 this.styleCircle = !this.styleCircle
