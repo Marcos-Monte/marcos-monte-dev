@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 .aboutSection {
     width: 100%;
-    height: 90vh;
+    padding: 5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,6 +83,7 @@ export default {
 /* Medias */
 @media (min-width: 901px) and (max-width: 1350px) {
     .aboutSection {
+        height: 100%;
         flex-direction: column;
         gap: 2rem;
     }

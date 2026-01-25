@@ -1,12 +1,9 @@
 <template>
     <section id="projects" class="projectsSection">
-
         <h2>Principais Projetos</h2>
-
         <span>Selecione o projeto que deseja saber mais.</span>
 
         <template  v-if="projetos.length > 0">
-            
             <section class="carrossel wow animate__animated animate__fadeInUp">
                 <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
 
@@ -19,8 +16,6 @@
                 </div>
                 <button class="botaoCarrossel next" @click="nextSlide">❯</button>
             </section>
-
-
         </template>
 
         <p v-else>Houve um erro no carregamento dos projetos =(</p>
@@ -158,6 +153,8 @@ import Card from "../users/Card.vue";
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 3rem;
+        height: 3rem;
         border-radius: 50%;
         padding: 1rem;
         top: 50%;
