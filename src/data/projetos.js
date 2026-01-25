@@ -30,7 +30,7 @@ export default {
     projetos: [
         {titulo: 'Landing Page', subtitulo: 'Frazatto Logística', imagem: FrazattoImagem, linkGithub: '', linkApp: 'https://frazattologistica.com.br/', descricao: 'Landing Page de empresa com foco no ramo Logístico', techs: [JavaScript, Vue, BootstrapVue, Sass, Git]},
 
-        {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: '', linkApp: 'https://thiagoandradests.com.br/', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
+        {titulo: 'Pagina Institucional', subtitulo: 'Thiago Andrade', imagem: ThiagoAndradeImagem, linkGithub: '', linkApp: 'https://thiago-andrade.vercel.app', descricao: 'Este projeto consiste em uma página institucional para um pré-candidato a vereador da cidade de Santos, atualmente em desenvolvimento. A página oferece uma visão completa sobre o candidato e permite a interação com a população.', techs: [JavaScript, React, Next, Node, SheetDb]},
 
         {titulo: 'Sistema de Reembolso', subtitulo: 'SISPAR', imagem: Sispar, linkGithub: '', linkGithub: 'https://github.com/Marcos-Monte/sispar', linkGithub: 'https://github.com/Marcos-Monte/sispar-backend', linkApp: 'https://sispar-iota.vercel.app/', descricao: 'O SISPAR é uma aplicação web desenvolvida no curso Fullstack "Be Digital" da Vai na Web, oferecido pela Wilson Sons. O objetivo desse projeto é construir um sistema FullStack de gerenciamento de reembolsos.', techs: [React, Python, MySql, Axios]},
 

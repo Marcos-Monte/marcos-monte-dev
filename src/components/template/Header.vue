@@ -72,16 +72,11 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
 
             },
 
-            /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
             changeStyleMode(){
-                // EventBus.emit('alterouEstilo')
                 this.toggleAppStyle()
-
-                /* Altera o 'circulo' de dentro do botão que altera o estilo */
                 this.styleCircle = !this.styleCircle
             },
 
-            /* Método, ao ser ativado alterna a 'visibilidade' do menu para o valor 'oposto' (true / false) */
             handleMenu(){
                 if(this.windowWidth < 769){
                     this.visibility = !this.visibility
