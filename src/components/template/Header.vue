@@ -99,18 +99,17 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
         background-color: var(--primary-color);
         font-size: 1.5rem;
         position: fixed;
-        z-index: 10; /* Garante que o header esteja acima de outros elementos */
+        z-index: 10;
 
         h3 {
             font-size: 2rem;
-
             strong {
                 color: var(--secondary-color)
             }
         }
 
         nav {
-            width: 30%;
+            width: 30% !important;
 
             ul {
                 width: 100%;
@@ -122,14 +121,14 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
                 a {
                     color: var(--font-color);
                     text-decoration: none;
-                }
 
-                a:hover {
-                    color: var(--secondary-color);
+                    &:hover {
+                        color: var(--secondary-color);
+                        transform: scale(1.8);
+                        transition: transform 0.3s ease;
+                    }
                 }
-
             }
-
         }
     }
 
@@ -162,16 +161,16 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
 
     /* Menu */
     .menu {
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            background-color: var(--secondary-color);
-            border-radius: .5rem;
-            border: none;
-        }
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        background-color: var(--secondary-color);
+        border-radius: .5rem;
+        border: none;
+    }
 
     .visible {
         visibility: visible;
