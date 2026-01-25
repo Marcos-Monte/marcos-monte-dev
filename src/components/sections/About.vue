@@ -55,7 +55,9 @@ export default {
         return {
             midias: [
                 { name: 'Linkedin', link: 'https://www.linkedin.com/in/montemarcos/' },
+                { name: 'WhatsApp', link: 'https://wa.me/+5513996398240' },
                 { name: 'Email', link: 'mailto:marcos.monte.junior@gmail.com' },
+                { name: 'GitHub', link: 'https://github.com/Marcos-Monte' },
                 { name: 'Curriculo', link: curriculoPDF },
             ]
         };

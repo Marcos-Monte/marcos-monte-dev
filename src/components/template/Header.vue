@@ -1,6 +1,6 @@
 <template>
-    <header class="containerHeader">
-
+    <header>
+        <div class="containerHeader">
         <h3><strong>M</strong>arcos<strong>M</strong>onte</h3>
 
         <!-- Menu 'hamburguer' com diretivas que fazem ele ficar visivel apenas em resoluções abaixo de 768px -->
@@ -22,7 +22,7 @@
 
             </ul>
         </nav>
-
+        </div>
     </header>
 </template>
 
@@ -89,16 +89,24 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
 
 <style lang="scss" scoped>
 
-    .containerHeader {
+    header {
         width: 100%;
         height: 5rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
         border-bottom: solid var(--secondary-color);
         background-color: var(--primary-color);
-        font-size: 1.5rem;
         position: fixed;
+        z-index: 10;
+    }
+
+    .containerHeader {
+        width: 100%;
+        max-width: 1440px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
         z-index: 10;
 
         h3 {
@@ -109,14 +117,18 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
         }
 
         nav {
-            width: 30% !important;
+            width: max-content !important;
+            height: auto;
+            padding: 1rem;
+            box-sizing: border-box;
 
             ul {
                 width: 100%;
                 list-style: none;
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
+                gap: 1rem;
 
                 a {
                     color: var(--font-color);
@@ -170,6 +182,8 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
         background-color: var(--secondary-color);
         border-radius: .5rem;
         border: none;
+        transition: all 0.8s ease;
+        cursor: pointer;
     }
 
     .visible {
