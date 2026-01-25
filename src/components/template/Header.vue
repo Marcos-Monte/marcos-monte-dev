@@ -1,27 +1,21 @@
 <template>
-
     <header class="containerHeader">
 
-        <h3>
-            <strong>M</strong>arcos<strong>M</strong>onte
-        </h3>
+        <h3><strong>M</strong>arcos<strong>M</strong>onte</h3>
 
         <!-- Menu 'hamburguer' com diretivas que fazem ele ficar visivel apenas em resoluções abaixo de 768px -->
         <div class="menu" v-if="windowWidth <= 768" @click="handleMenu()">
-
             <!-- Icone de uso do Bootstrap -->
             <i class="bi bi-menu-button-fill"></i>
-
         </div>  
 
         <!-- Navegação, classe dinamica de visibilidade atrelada a variavel 'visibility' -->
         <nav :class="visibility == false? 'hidden': 'visible'">
             <ul>
-                <li><a href="#home" @click="handleMenu()">Home</a></li>
-                <li><a href="#about" @click="handleMenu()">Sobre</a></li>
-                <li><a href="#projects" @click="handleMenu()">Projetos</a></li>
+                <li v-for="link in links" :key="link.name">
+                    <a :href="link.href" @click="handleMenu()">{{ link.name }}</a>
+                </li>
 
-                <!-- Botão, ao clicar ativa o método que alterna os estilos (dark / light mode) -->
                 <button class="styleButton" @click="changeStyleMode()">
                     <span :class="{ darkModeCircle: styleCircle }"></span>
                 </button>
@@ -30,7 +24,6 @@
         </nav>
 
     </header>
-
 </template>
 
 <script>
@@ -43,6 +36,11 @@ import { mapActions } from 'vuex/dist/vuex.cjs.js';
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
                 styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
                 visibility: window.innerWidth > 768, // Se a largura inicial for 'maior' que 768px, visibilidade = true
+                links: [
+                    { name: 'Home', href: '#home' },
+                    { name: 'Sobre', href: '#about' },
+                    { name: 'Projetos', href: '#projects' }
+                ]
             }
         },
 
