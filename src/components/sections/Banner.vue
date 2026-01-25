@@ -30,7 +30,7 @@ import DarkBanner from '../../assets/banner.png';
             },
 
             isMobile() {
-                return this.windowWidth <= 768;
+                return this.windowWidth <= 700;
             },
         },
 
@@ -60,6 +60,14 @@ import DarkBanner from '../../assets/banner.png';
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .bannerSection {
+            img {
+                object-fit: fill;
+            }
         }
     }
 </style>
