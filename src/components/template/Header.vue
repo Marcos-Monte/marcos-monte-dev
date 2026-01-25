@@ -1,27 +1,21 @@
 <template>
-
     <header class="containerHeader">
 
-        <h3>
-            <strong>M</strong>arcos<strong>M</strong>onte
-        </h3>
+        <h3><strong>M</strong>arcos<strong>M</strong>onte</h3>
 
         <!-- Menu 'hamburguer' com diretivas que fazem ele ficar visivel apenas em resoluções abaixo de 768px -->
         <div class="menu" v-if="windowWidth <= 768" @click="handleMenu()">
-
             <!-- Icone de uso do Bootstrap -->
             <i class="bi bi-menu-button-fill"></i>
-
         </div>  
 
         <!-- Navegação, classe dinamica de visibilidade atrelada a variavel 'visibility' -->
         <nav :class="visibility == false? 'hidden': 'visible'">
             <ul>
-                <li><a href="#home" @click="handleMenu()">Home</a></li>
-                <li><a href="#about" @click="handleMenu()">Sobre</a></li>
-                <li><a href="#projects" @click="handleMenu()">Projetos</a></li>
+                <li v-for="link in links" :key="link.name">
+                    <a :href="link.href" @click="handleMenu()">{{ link.name }}</a>
+                </li>
 
-                <!-- Botão, ao clicar ativa o método que alterna os estilos (dark / light mode) -->
                 <button class="styleButton" @click="changeStyleMode()">
                     <span :class="{ darkModeCircle: styleCircle }"></span>
                 </button>
@@ -30,11 +24,10 @@
         </nav>
 
     </header>
-
 </template>
 
 <script>
-import EventBus from '../../eventBus.js';
+import { mapActions } from 'vuex/dist/vuex.cjs.js';
 
     export default {
         
@@ -43,6 +36,11 @@ import EventBus from '../../eventBus.js';
                 windowWidth: window.innerWidth, // Armazena a largura inicial da tela
                 styleCircle: false, // Estilo do 'circulo' de dentro do botão que altera o estilo
                 visibility: window.innerWidth > 768, // Se a largura inicial for 'maior' que 768px, visibilidade = true
+                links: [
+                    { name: 'Home', href: '#home' },
+                    { name: 'Sobre', href: '#about' },
+                    { name: 'Projetos', href: '#projects' }
+                ]
             }
         },
 
@@ -57,6 +55,8 @@ import EventBus from '../../eventBus.js';
         },
 
         methods: {
+            ...mapActions('globals', ['toggleAppStyle']),
+
             // Atualiza a largura da janela ()
             updateWindowWidth() {
                 this.windowWidth = window.innerWidth;
@@ -70,15 +70,11 @@ import EventBus from '../../eventBus.js';
 
             },
 
-            /* Emite um Evento Personalizado que será usado para modificar o 'estilo' da aplicação entre 'dark e light mode' */
             changeStyleMode(){
-                EventBus.emit('alterouEstilo')
-
-                /* Altera o 'circulo' de dentro do botão que altera o estilo */
+                this.toggleAppStyle()
                 this.styleCircle = !this.styleCircle
             },
 
-            /* Método, ao ser ativado alterna a 'visibilidade' do menu para o valor 'oposto' (true / false) */
             handleMenu(){
                 if(this.windowWidth < 769){
                     this.visibility = !this.visibility
@@ -103,18 +99,17 @@ import EventBus from '../../eventBus.js';
         background-color: var(--primary-color);
         font-size: 1.5rem;
         position: fixed;
-        z-index: 10; /* Garante que o header esteja acima de outros elementos */
+        z-index: 10;
 
         h3 {
             font-size: 2rem;
-
             strong {
                 color: var(--secondary-color)
             }
         }
 
         nav {
-            width: 30%;
+            width: 30% !important;
 
             ul {
                 width: 100%;
@@ -126,14 +121,14 @@ import EventBus from '../../eventBus.js';
                 a {
                     color: var(--font-color);
                     text-decoration: none;
-                }
 
-                a:hover {
-                    color: var(--secondary-color);
+                    &:hover {
+                        color: var(--secondary-color);
+                        transform: scale(1.8);
+                        transition: transform 0.3s ease;
+                    }
                 }
-
             }
-
         }
     }
 
@@ -166,16 +161,16 @@ import EventBus from '../../eventBus.js';
 
     /* Menu */
     .menu {
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            background-color: var(--secondary-color);
-            border-radius: .5rem;
-            border: none;
-        }
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        background-color: var(--secondary-color);
+        border-radius: .5rem;
+        border: none;
+    }
 
     .visible {
         visibility: visible;

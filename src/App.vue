@@ -1,15 +1,10 @@
 <template>
-
-  <Page :class="styleMode === false? 'dark': 'light'"/>
-
+  <Page :class="appStyle? 'light': 'dark'"/>
 </template>
 
 <script>
-
-  /* Importando Objeto de Event Bus */
-  import eventBus from './eventBus';
-  /* Importando Componente Filho */
-  import Page from './components/template/Page.vue';
+import { mapGetters } from 'vuex';
+import Page from './components/template/Page.vue';
 
   export default {
     
@@ -17,23 +12,9 @@
 
     components: {Page},
 
-    data(){
-      return {
-        styleMode: false,
-      }
+    computed: {
+      ...mapGetters('globals', ['appStyle']),
     },
-
-    created(){
-
-      eventBus.on('alterouEstilo', () => {
-
-        this.styleMode = !this.styleMode
-        
-      })
-
-
-    }
-    
   }
 </script>
 

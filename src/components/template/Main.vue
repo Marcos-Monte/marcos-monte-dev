@@ -1,34 +1,29 @@
 <template>
 
     <section class="containerMain">
-
-        <Home />
-
+        <Banner />
         <About />
-
         <Projects />
-
     </section>
 
 </template>
 
 <script>
-
-/* Imports: Componentes referentes ao conteudo da aplicação */
 import About from '../sections/About.vue';
-import Home from '../sections/Home.vue';
+import Banner from '../sections/Banner.vue';
 import Projects from '../sections/Projects.vue';
 
     export default {
-        /* Registrando Componentes */
-        components: {Home, Projects, About},
-
+        components: { 
+            Projects, 
+            About, 
+            Banner,
+        },
     }
 
 </script>
 
-<style>
-
+<style scoped lang="scss">
     .containerMain {
         width: 100%;
     }

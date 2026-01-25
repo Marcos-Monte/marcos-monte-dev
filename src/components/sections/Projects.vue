@@ -1,39 +1,25 @@
 <template>
-
-    <section id="projects">
-
+    <section id="projects" class="projectsSection">
         <h2>Principais Projetos</h2>
-
         <span>Selecione o projeto que deseja saber mais.</span>
-        <!-- Será renderizado: Se a lista de projetos não estiver vazia -->
+
         <template  v-if="projetos.length > 0">
-
-            <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
             <section class="carrossel wow animate__animated animate__fadeInUp">
-
                 <button class="botaoCarrossel prev" @click="prevSlide">❮</button>
 
                 <div class="carrosselContainer">
-
                     <Card 
                         v-for="(projeto, index) in visibleProjects"
                         :key="index"
                         :propsProjeto="projeto"
                     />
-
                 </div>
-
                 <button class="botaoCarrossel next" @click="nextSlide">❯</button>
-
             </section>
-
         </template>
 
-        <!-- Será renderizado: Se a lista de projetos estiver vazia -->
         <p v-else>Houve um erro no carregamento dos projetos =(</p>
-
     </section>
-    
 </template>
 
 <script>
@@ -113,9 +99,9 @@ import Card from "../users/Card.vue";
 </script>
 
 <style lang="scss" scoped>
-    #projects {
-        width: 100%;
-        height: 99.5vh;
+    .projectsSection {
+        width: 100vw !important;
+        padding: 5rem 1rem !important;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -144,6 +130,9 @@ import Card from "../users/Card.vue";
         display: flex;
         justify-content: center;
         position: relative;
+        max-width: 1480px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     /* Container que armazena os Items / Projetos */
@@ -158,16 +147,26 @@ import Card from "../users/Card.vue";
     }
 
     .botaoCarrossel{
+        position: absolute;
         background-color: var(--secondary-color);
         border: none;
-        display: inline-block;
-        position: absolute;
-        height: 50px;
-        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        padding: 1rem;
         top: 50%;
         color: var(--font-color);
         cursor: pointer;
         z-index: 10;
+
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            transform: scale(1.3);
+        }
     }
 
     .next {
@@ -181,7 +180,7 @@ import Card from "../users/Card.vue";
 
     /* Medias */
     @media (max-width: 900px){
-        #projects {
+        .projectsSection {
             height: 100%;
 
             h2 {

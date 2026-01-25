@@ -1,153 +1,116 @@
 <template>
+    <section id="about" class="d-flex flex-direction justify-content-between align-item-center">
+        <div class="aboutSection">
+            <Photo class="wow animate__animated animate__slideInLeft" :propsImage="imagePath"
+                :propsAlt="'Design em animação de um programador com traços indigenas e bigode'" />
 
-    <section id="about">
-        <!-- Exibe a foto somente se a largura da tela for maior que 700px -->
-        <template v-if="isWideScreen">
+            <article class="description wow animate__animated animate__slideInRight">
 
-            <!-- Componente recebe, método COMPUTADO que armazena o caminho da Imagem e texto alternativo, via 'props'-->
-            <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
-            <Photo 
-                class="wow animate__animated animate__slideInLeft"
-                :propsImage="image"
-                :propsAlt="'Foto do Desenvolvedor'" 
-            />
+                <h2><strong>S</strong>obre <strong>M</strong>im</h2>
 
-        </template>
+                <p>Olá, sou Marcos Monte, desenvolvedor Web Júnior formado em Análise e Desenvolvimento de Sistemas em junho de 2025. Apaixonado por tecnologia, estou sempre explorando novas ferramentas para criar soluções inovadoras e impactantes.</p> <p>Desde fevereiro de 2025, atuo como desenvolvedor Web, utilizando minha stack composta por JavaScript, Vue.js, Bootstrap, Vuetify, Vue-Router, VUEX, GIT, VS Code, Bitbucket, Jira, Axios e integração com APIs RESTful.</p> <p>Participo de uma squad com cinco membros fixos, onde colaboro em projetos de alto impacto. Essa experiência tem aprimorado minhas habilidades técnicas e interpessoais em ambientes dinâmicos e colaborativos.</p> <p>No momento, estou ampliando meu conhecimento com Kotlin, visando criar aplicações mobile usando Kotlin Multiplataforma para Android e iOS. Apesar de estar no início dos estudos, estou animado para construir minha primeira aplicação.</p> <p>Com visão estratégica desenvolvida através da saúde pública e uma base sólida em resolução de problemas, busco evoluir continuamente e criar aplicações que fazem a diferença. <strong>Vamos juntos nessa jornada?</strong></p>
 
-        <!-- Animação usando as bibliotecas 'wow.js e animate.css' -->
-        <article class="description wow animate__animated animate__slideInRight">
-
-            <h2><strong>S</strong>obre <strong>M</strong>im</h2>
-
-            <p>Olá, sou Marcos Monte, desenvolvedor Web em transição de carreira e estudante de Análise e Desenvolvimento de Sistemas. Apaixonado por tecnologia, atualmente estou no 4º semestre do curso e desenvolvo projetos utilizando tecnologias como Vue.js, React e Node.js.</p> 
-            
-            <p>Minha jornada combina habilidades técnicas com uma base sólida de resolução de problemas adquirida ao longo de minha experiência profissional. Como servidor público na área da saúde, desenvolvi uma visão estratégica que aplico no desenvolvimento de soluções funcionais e impactantes.</p> 
-            
-            <p>Estou sempre explorando novas ferramentas e tendências em tecnologia, buscando evoluir como desenvolvedor e criar aplicações que fazem a diferença. <strong> Vamos construir algo incrível juntos?</strong></p>
-
-
-        </article>
-
+            </article>
+        </div>
+        <LoopTechnologies />
     </section>
-
 </template>
 
 <script>
-/* Import de Imagems */
-import Foto from '../../assets/foto.jpeg';
-
-/* Import de Componentes */
+import { mapGetters } from 'vuex';
+import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
+import lightImage from '../../assets/cartoon-sem-fundo-light.jpeg';
 import Photo from '../users/Photo.vue';
+import LoopTechnologies from './LoopTechnologies.vue';
 
-    export default {
-        /* Registrando componente Filho */
-        components: {Photo},
+export default {
+    components: {
+        Photo,
+        LoopTechnologies,
+    },
 
-        data(){
-            return {
-                windowWidth: window.innerWidth, // Armazena a largura inicial da tela
-                image: Foto, // Variavel recebe o caminho da 'imagem', que será adicionada ao componente Photo via Props
-            }
-        },
+    computed: {
+        ...mapGetters('globals', ['appStyle']),
 
-        computed: {
-            // Computed property para verificar se a largura é maior que 700px
-            isWideScreen(){
-                return this.windowWidth > 700
-            },
-        },
-
-        mounted() {
-            // Escuta eventos de resize para atualizar a largura da janela
-            window.addEventListener('resize', this.updateWindowWidth);
-
-        },
-
-        beforeDestroy() {
-            // Remove o ouvinte de evento quando o componente for destruído
-            window.removeEventListener('resize', this.updateWindowWidth);
-        },
-
-        methods: {
-            // Atualiza a largura da janela
-            updateWindowWidth() {
-                this.windowWidth = window.innerWidth;
-            }
+        imagePath() {
+            return this.appStyle
+                ? lightImage
+                : darkImage
         }
-
-    }
+    },
+}
 
 </script>
 
 <style lang="scss" scoped>
-    #about {
-        width: 100%;
-        height: 99.5vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5rem;
-        
+.aboutSection {
+    width: 100%;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+}
+
+.description {
+    width: 35%;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+
+    h2 {
+        font-size: 2rem;
+
+        strong {
+            color: var(--secondary-color)
+        }
+
+    }
+
+    p {
+        font-size: 1.2rem;
+
+        strong {
+            color: var(--secondary-color)
+        }
+    }
+}
+
+/* Medias */
+@media (min-width: 901px) and (max-width: 1350px) {
+    .aboutSection {
+        height: 100%;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .description {
-        width: 35%;
-        text-align: justify;
-        display: flex;
+        width: 80%;
+    }
+}
+
+@media (max-width: 900px) {
+    .aboutSection {
+        padding: 3rem 0;
+        height: 100%;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        gap: 2rem;
+        gap: 1rem;
+    }
+
+    .description {
+        width: 95%;
 
         h2 {
-            font-size: 2rem;
-
-            strong {
-                color: var(--secondary-color)
-            }
-
+            font-size: 1.5rem;
         }
 
-        p{
-            font-size: 1.2rem;
-
-            strong {
-                color: var(--secondary-color)
-            }
+        p {
+            font-size: 1rem;
         }
     }
-
-    /* Medias */
-    @media (min-width: 701px) and (max-width: 1200px){
-        #about {
-            padding: 5rem 0 3rem 0 ;
-            height: 100%;
-            flex-direction: column;
-        }
-
-        .description {
-            width: 80%;
-        }
-    }
-
-    @media (max-width: 700px){
-        #about {
-            padding: 5rem 0 3rem 0 ;
-            height: 100%;
-            flex-direction: column;
-        }
-
-        .description {
-            width: 95%;
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
-
+}
 </style>
