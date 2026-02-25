@@ -39,7 +39,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import curriculoPDF from '../../../public/CV 2025.pdf';
+import curriculoPDF from '../../../public/Marcos-Monte-CV-2026.pdf';
 import darkImage from '../../assets/cartoon-sem-fundo-dark.jpeg';
 import lightImage from '../../assets/cartoon-sem-fundo-light.jpeg';
 import Photo from '../users/Photo.vue';
